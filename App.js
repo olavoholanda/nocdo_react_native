@@ -13,11 +13,11 @@ const uiTheme = {
     accentColor: accentColor,
     primaryTextColor: textColor,
     secondaryTextColor: darkTextColor,
-    alternateTextColor: greyTextColor,
+    alternateTextColor: textColor,
   },
   toolbar: {
     container: {
-      height: 50,
+      height: 80,
     },
   },
 };

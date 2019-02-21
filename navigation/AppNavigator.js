@@ -2,9 +2,11 @@ import React from 'react'
 import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 
 import SignInScreen from '../screens/SignInScreen'
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
 
 export default createAppContainer(createSwitchNavigator({
     Main: SignInScreen,
+    ForgotPassword: ForgotPasswordScreen,
 }))
 
 // export default createAppContainer(createSwitchNavigator({

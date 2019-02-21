@@ -35,7 +35,9 @@ export default class SignInScreen extends React.Component {
                         <Button raised primary text='Entrar'/>
                     </View>
                     <View style={{flex: 1, alignItems: 'center'}}>
-                        <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
+                        <Text style={styles.forgotPassword}
+                              onPress={() => this.props.navigation.navigate('ForgotPassword')}
+                        >Esqueceu a senha?</Text>
                     </View>
                     <View style={{flex: 1}}>
                         <Button raised accent text='Criar Conta'/>
