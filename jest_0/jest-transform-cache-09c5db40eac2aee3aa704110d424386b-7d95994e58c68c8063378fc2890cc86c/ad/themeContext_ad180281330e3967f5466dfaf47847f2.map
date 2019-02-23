@@ -1,0 +1,1 @@
+{"version":3,"sources":["themeContext.js"],"names":["React","createContext"],"mappings":";;;;;;;AAAA;;AACA;;eAEeA,eAAMC,aAAN,CAAoB,wBAApB,C","sourcesContent":["import React from 'react';\nimport getTheme from './getTheme';\n\nexport default React.createContext(getTheme());\n"]}

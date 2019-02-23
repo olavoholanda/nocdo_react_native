@@ -2,8 +2,10 @@ import React from 'react'
 import {createAppContainer, createStackNavigator, createSwitchNavigator} from 'react-navigation'
 
 import SignInScreen from '../screens/SignInScreen'
+import RegisterScreen from '../screens/RegisterScreen'
 
-const AuthStack = createStackNavigator({SignIn: SignInScreen})
+
+const AuthStack = createStackNavigator({Register: RegisterScreen}) 
 
 export default createAppContainer(createSwitchNavigator({
     Main: AuthStack,

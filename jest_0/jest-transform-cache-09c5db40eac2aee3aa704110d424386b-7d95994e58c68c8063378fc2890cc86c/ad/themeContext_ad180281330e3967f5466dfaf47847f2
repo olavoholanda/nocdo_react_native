@@ -1,0 +1,16 @@
+2b635ae525a58e6bb70990834a437689
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _getTheme = _interopRequireDefault(require("./getTheme"));
+
+var _default = _react.default.createContext((0, _getTheme.default)());
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRoZW1lQ29udGV4dC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsImNyZWF0ZUNvbnRleHQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7QUFDQTs7ZUFFZUEsZUFBTUMsYUFBTixDQUFvQix3QkFBcEIsQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgZ2V0VGhlbWUgZnJvbSAnLi9nZXRUaGVtZSc7XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0LmNyZWF0ZUNvbnRleHQoZ2V0VGhlbWUoKSk7XG4iXX0=

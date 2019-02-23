@@ -1,0 +1,144 @@
+94f0810fcb5e4a564b33b931c4729cd2
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _Entypo = _interopRequireDefault(require("@expo/vector-icons/Entypo"));
+
+var _EvilIcons = _interopRequireDefault(require("@expo/vector-icons/EvilIcons"));
+
+var _Feather = _interopRequireDefault(require("@expo/vector-icons/Feather"));
+
+var _FontAwesome = _interopRequireDefault(require("@expo/vector-icons/FontAwesome"));
+
+var _Foundation = _interopRequireDefault(require("@expo/vector-icons/Foundation"));
+
+var _Ionicons = _interopRequireDefault(require("@expo/vector-icons/Ionicons"));
+
+var _MaterialIcons = _interopRequireDefault(require("@expo/vector-icons/MaterialIcons"));
+
+var _MaterialCommunityIcons = _interopRequireDefault(require("@expo/vector-icons/MaterialCommunityIcons"));
+
+var _Octicons = _interopRequireDefault(require("@expo/vector-icons/Octicons"));
+
+var _Zocial = _interopRequireDefault(require("@expo/vector-icons/Zocial"));
+
+var _SimpleLineIcons = _interopRequireDefault(require("@expo/vector-icons/SimpleLineIcons"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _withTheme = _interopRequireDefault(require("../styles/withTheme"));
+
+var propTypes = {
+  name: _propTypes.default.string.isRequired,
+  style: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.array]),
+  size: _propTypes.default.number,
+  color: _propTypes.default.string,
+  iconSet: _propTypes.default.string,
+  theme: _propTypes.default.any
+};
+var defaultProps = {
+  size: null,
+  color: null,
+  style: null,
+  iconSet: null
+};
+
+var getIconComponent = function getIconComponent(iconSet) {
+  switch (iconSet) {
+    case 'Entypo':
+      return _Entypo.default;
+
+    case 'EvilIcons':
+      return _EvilIcons.default;
+
+    case 'Feather':
+      return _Feather.default;
+
+    case 'FontAwesome':
+      return _FontAwesome.default;
+
+    case 'Foundation':
+      return _Foundation.default;
+
+    case 'Ionicons':
+      return _Ionicons.default;
+
+    case 'MaterialIcons':
+      return _MaterialIcons.default;
+
+    case 'MaterialCommunityIcons':
+      return _MaterialCommunityIcons.default;
+
+    case 'Octicons':
+      return _Octicons.default;
+
+    case 'Zocial':
+      return _Zocial.default;
+
+    case 'SimpleLineIcons':
+      return _SimpleLineIcons.default;
+
+    default:
+      return _MaterialIcons.default;
+  }
+};
+
+var Icon = function (_PureComponent) {
+  (0, _inherits2.default)(Icon, _PureComponent);
+
+  function Icon() {
+    (0, _classCallCheck2.default)(this, Icon);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Icon).apply(this, arguments));
+  }
+
+  (0, _createClass2.default)(Icon, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          name = _this$props.name,
+          style = _this$props.style,
+          size = _this$props.size,
+          color = _this$props.color,
+          theme = _this$props.theme,
+          iconSet = _this$props.iconSet;
+      var palette = theme.palette,
+          spacing = theme.spacing;
+      var iconColor = color || palette.secondaryTextColor;
+      var iconSize = size || spacing.iconSize;
+      var VectorIcon = getIconComponent(iconSet || theme.iconSet);
+      return _react.default.createElement(VectorIcon, {
+        name: name,
+        size: iconSize,
+        color: iconColor,
+        style: style
+      });
+    }
+  }]);
+  return Icon;
+}(_react.PureComponent);
+
+Icon.propTypes = propTypes;
+Icon.defaultProps = defaultProps;
+
+var _default = (0, _withTheme.default)(Icon);
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbInByb3BUeXBlcyIsIm5hbWUiLCJQcm9wVHlwZXMiLCJzdHJpbmciLCJpc1JlcXVpcmVkIiwic3R5bGUiLCJvbmVPZlR5cGUiLCJvYmplY3QiLCJhcnJheSIsInNpemUiLCJudW1iZXIiLCJjb2xvciIsImljb25TZXQiLCJ0aGVtZSIsImFueSIsImRlZmF1bHRQcm9wcyIsImdldEljb25Db21wb25lbnQiLCJFbnR5cG8iLCJFdmlsSWNvbnMiLCJGZWF0aGVyIiwiRm9udEF3ZXNvbWUiLCJGb3VuZGF0aW9uIiwiSW9uaWNvbnMiLCJNYXRlcmlhbEljb25zIiwiTWF0ZXJpYWxDb21tdW5pdHlJY29ucyIsIk9jdGljb25zIiwiWm9jaWFsIiwiU2ltcGxlTGluZUljb25zIiwiSWNvbiIsInByb3BzIiwicGFsZXR0ZSIsInNwYWNpbmciLCJpY29uQ29sb3IiLCJzZWNvbmRhcnlUZXh0Q29sb3IiLCJpY29uU2l6ZSIsIlZlY3Rvckljb24iLCJQdXJlQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBRUE7O0FBQ0E7O0FBRUE7O0FBRUEsSUFBTUEsU0FBUyxHQUFHO0FBQ2hCQyxFQUFBQSxJQUFJLEVBQUVDLG1CQUFVQyxNQUFWLENBQWlCQyxVQURQO0FBRWhCQyxFQUFBQSxLQUFLLEVBQUVILG1CQUFVSSxTQUFWLENBQW9CLENBQUNKLG1CQUFVSyxNQUFYLEVBQW1CTCxtQkFBVU0sS0FBN0IsQ0FBcEIsQ0FGUztBQUdoQkMsRUFBQUEsSUFBSSxFQUFFUCxtQkFBVVEsTUFIQTtBQUloQkMsRUFBQUEsS0FBSyxFQUFFVCxtQkFBVUMsTUFKRDtBQVFoQlMsRUFBQUEsT0FBTyxFQUFFVixtQkFBVUMsTUFSSDtBQVloQlUsRUFBQUEsS0FBSyxFQUFFWCxtQkFBVVk7QUFaRCxDQUFsQjtBQWNBLElBQU1DLFlBQVksR0FBRztBQUNuQk4sRUFBQUEsSUFBSSxFQUFFLElBRGE7QUFFbkJFLEVBQUFBLEtBQUssRUFBRSxJQUZZO0FBR25CTixFQUFBQSxLQUFLLEVBQUUsSUFIWTtBQUluQk8sRUFBQUEsT0FBTyxFQUFFO0FBSlUsQ0FBckI7O0FBT0EsSUFBTUksZ0JBQWdCLEdBQUcsU0FBbkJBLGdCQUFtQixDQUFBSixPQUFPLEVBQUk7QUFDbEMsVUFBUUEsT0FBUjtBQUNFLFNBQUssUUFBTDtBQUNFLGFBQU9LLGVBQVA7O0FBQ0YsU0FBSyxXQUFMO0FBQ0UsYUFBT0Msa0JBQVA7O0FBQ0YsU0FBSyxTQUFMO0FBQ0UsYUFBT0MsZ0JBQVA7O0FBQ0YsU0FBSyxhQUFMO0FBQ0UsYUFBT0Msb0JBQVA7O0FBQ0YsU0FBSyxZQUFMO0FBQ0UsYUFBT0MsbUJBQVA7O0FBQ0YsU0FBSyxVQUFMO0FBQ0UsYUFBT0MsaUJBQVA7O0FBQ0YsU0FBSyxlQUFMO0FBQ0UsYUFBT0Msc0JBQVA7O0FBQ0YsU0FBSyx3QkFBTDtBQUNFLGFBQU9DLCtCQUFQOztBQUNGLFNBQUssVUFBTDtBQUNFLGFBQU9DLGlCQUFQOztBQUNGLFNBQUssUUFBTDtBQUNFLGFBQU9DLGVBQVA7O0FBQ0YsU0FBSyxpQkFBTDtBQUNFLGFBQU9DLHdCQUFQOztBQUNGO0FBQ0UsYUFBT0osc0JBQVA7QUF4Qko7QUEwQkQsQ0EzQkQ7O0lBNkJNSyxJOzs7Ozs7Ozs7OzZCQUNLO0FBQUEsd0JBQzhDLEtBQUtDLEtBRG5EO0FBQUEsVUFDQzVCLElBREQsZUFDQ0EsSUFERDtBQUFBLFVBQ09JLEtBRFAsZUFDT0EsS0FEUDtBQUFBLFVBQ2NJLElBRGQsZUFDY0EsSUFEZDtBQUFBLFVBQ29CRSxLQURwQixlQUNvQkEsS0FEcEI7QUFBQSxVQUMyQkUsS0FEM0IsZUFDMkJBLEtBRDNCO0FBQUEsVUFDa0NELE9BRGxDLGVBQ2tDQSxPQURsQztBQUFBLFVBRUNrQixPQUZELEdBRXNCakIsS0FGdEIsQ0FFQ2lCLE9BRkQ7QUFBQSxVQUVVQyxPQUZWLEdBRXNCbEIsS0FGdEIsQ0FFVWtCLE9BRlY7QUFJUCxVQUFNQyxTQUFTLEdBQUdyQixLQUFLLElBQUltQixPQUFPLENBQUNHLGtCQUFuQztBQUNBLFVBQU1DLFFBQVEsR0FBR3pCLElBQUksSUFBSXNCLE9BQU8sQ0FBQ0csUUFBakM7QUFDQSxVQUFNQyxVQUFVLEdBQUduQixnQkFBZ0IsQ0FBQ0osT0FBTyxJQUFJQyxLQUFLLENBQUNELE9BQWxCLENBQW5DO0FBRUEsYUFDRSw2QkFBQyxVQUFEO0FBQVksUUFBQSxJQUFJLEVBQUVYLElBQWxCO0FBQXdCLFFBQUEsSUFBSSxFQUFFaUMsUUFBOUI7QUFBd0MsUUFBQSxLQUFLLEVBQUVGLFNBQS9DO0FBQTBELFFBQUEsS0FBSyxFQUFFM0I7QUFBakUsUUFERjtBQUdEOzs7RUFaZ0IrQixvQjs7QUFlbkJSLElBQUksQ0FBQzVCLFNBQUwsR0FBaUJBLFNBQWpCO0FBQ0E0QixJQUFJLENBQUNiLFlBQUwsR0FBb0JBLFlBQXBCOztlQUVlLHdCQUFVYSxJQUFWLEMiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBlc2xpbnQtZGlzYWJsZSBpbXBvcnQvbm8tdW5yZXNvbHZlZCwgaW1wb3J0L2V4dGVuc2lvbnMgKi9cbmltcG9ydCBFbnR5cG8gZnJvbSAncmVhY3QtbmF0aXZlLXZlY3Rvci1pY29ucy9FbnR5cG8nO1xuaW1wb3J0IEV2aWxJY29ucyBmcm9tICdyZWFjdC1uYXRpdmUtdmVjdG9yLWljb25zL0V2aWxJY29ucyc7XG5pbXBvcnQgRmVhdGhlciBmcm9tICdyZWFjdC1uYXRpdmUtdmVjdG9yLWljb25zL0ZlYXRoZXInO1xuaW1wb3J0IEZvbnRBd2Vzb21lIGZyb20gJ3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvRm9udEF3ZXNvbWUnO1xuaW1wb3J0IEZvdW5kYXRpb24gZnJvbSAncmVhY3QtbmF0aXZlLXZlY3Rvci1pY29ucy9Gb3VuZGF0aW9uJztcbmltcG9ydCBJb25pY29ucyBmcm9tICdyZWFjdC1uYXRpdmUtdmVjdG9yLWljb25zL0lvbmljb25zJztcbmltcG9ydCBNYXRlcmlhbEljb25zIGZyb20gJ3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvTWF0ZXJpYWxJY29ucyc7XG5pbXBvcnQgTWF0ZXJpYWxDb21tdW5pdHlJY29ucyBmcm9tICdyZWFjdC1uYXRpdmUtdmVjdG9yLWljb25zL01hdGVyaWFsQ29tbXVuaXR5SWNvbnMnO1xuaW1wb3J0IE9jdGljb25zIGZyb20gJ3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvT2N0aWNvbnMnO1xuaW1wb3J0IFpvY2lhbCBmcm9tICdyZWFjdC1uYXRpdmUtdmVjdG9yLWljb25zL1pvY2lhbCc7XG5pbXBvcnQgU2ltcGxlTGluZUljb25zIGZyb20gJ3JlYWN0LW5hdGl2ZS12ZWN0b3ItaWNvbnMvU2ltcGxlTGluZUljb25zJztcblxuaW1wb3J0IFJlYWN0LCB7IFB1cmVDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuLyogZXNsaW50LWVuYWJsZSBpbXBvcnQvbm8tdW5yZXNvbHZlZCwgaW1wb3J0L2V4dGVuc2lvbnMgKi9cbmltcG9ydCB3aXRoVGhlbWUgZnJvbSAnLi4vc3R5bGVzL3dpdGhUaGVtZSc7XG5cbmNvbnN0IHByb3BUeXBlcyA9IHtcbiAgbmFtZTogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICBzdHlsZTogUHJvcFR5cGVzLm9uZU9mVHlwZShbUHJvcFR5cGVzLm9iamVjdCwgUHJvcFR5cGVzLmFycmF5XSksXG4gIHNpemU6IFByb3BUeXBlcy5udW1iZXIsXG4gIGNvbG9yOiBQcm9wVHlwZXMuc3RyaW5nLFxuICAvKipcbiAgICogTmFtZSBvZiBJY29uIHNldCB0aGF0IHNob3VsZCBiZSB1c2UuIEZyb20gcmVhY3QtbmF0aXZlLXZlY3Rvci1pY29uc1xuICAgKi9cbiAgaWNvblNldDogUHJvcFR5cGVzLnN0cmluZyxcbiAgLyoqXG4gICAqIFRoZW1lXG4gICAqL1xuICB0aGVtZTogUHJvcFR5cGVzLmFueSwgLy8gZXNsaW50LWRpc2FibGUtbGluZVxufTtcbmNvbnN0IGRlZmF1bHRQcm9wcyA9IHtcbiAgc2l6ZTogbnVsbCxcbiAgY29sb3I6IG51bGwsXG4gIHN0eWxlOiBudWxsLFxuICBpY29uU2V0OiBudWxsLFxufTtcblxuY29uc3QgZ2V0SWNvbkNvbXBvbmVudCA9IGljb25TZXQgPT4ge1xuICBzd2l0Y2ggKGljb25TZXQpIHtcbiAgICBjYXNlICdFbnR5cG8nOlxuICAgICAgcmV0dXJuIEVudHlwbztcbiAgICBjYXNlICdFdmlsSWNvbnMnOlxuICAgICAgcmV0dXJuIEV2aWxJY29ucztcbiAgICBjYXNlICdGZWF0aGVyJzpcbiAgICAgIHJldHVybiBGZWF0aGVyO1xuICAgIGNhc2UgJ0ZvbnRBd2Vzb21lJzpcbiAgICAgIHJldHVybiBGb250QXdlc29tZTtcbiAgICBjYXNlICdGb3VuZGF0aW9uJzpcbiAgICAgIHJldHVybiBGb3VuZGF0aW9uO1xuICAgIGNhc2UgJ0lvbmljb25zJzpcbiAgICAgIHJldHVybiBJb25pY29ucztcbiAgICBjYXNlICdNYXRlcmlhbEljb25zJzpcbiAgICAgIHJldHVybiBNYXRlcmlhbEljb25zO1xuICAgIGNhc2UgJ01hdGVyaWFsQ29tbXVuaXR5SWNvbnMnOlxuICAgICAgcmV0dXJuIE1hdGVyaWFsQ29tbXVuaXR5SWNvbnM7XG4gICAgY2FzZSAnT2N0aWNvbnMnOlxuICAgICAgcmV0dXJuIE9jdGljb25zO1xuICAgIGNhc2UgJ1pvY2lhbCc6XG4gICAgICByZXR1cm4gWm9jaWFsO1xuICAgIGNhc2UgJ1NpbXBsZUxpbmVJY29ucyc6XG4gICAgICByZXR1cm4gU2ltcGxlTGluZUljb25zO1xuICAgIGRlZmF1bHQ6XG4gICAgICByZXR1cm4gTWF0ZXJpYWxJY29ucztcbiAgfVxufTtcblxuY2xhc3MgSWNvbiBleHRlbmRzIFB1cmVDb21wb25lbnQge1xuICByZW5kZXIoKSB7XG4gICAgY29uc3QgeyBuYW1lLCBzdHlsZSwgc2l6ZSwgY29sb3IsIHRoZW1lLCBpY29uU2V0IH0gPSB0aGlzLnByb3BzO1xuICAgIGNvbnN0IHsgcGFsZXR0ZSwgc3BhY2luZyB9ID0gdGhlbWU7XG5cbiAgICBjb25zdCBpY29uQ29sb3IgPSBjb2xvciB8fCBwYWxldHRlLnNlY29uZGFyeVRleHRDb2xvcjtcbiAgICBjb25zdCBpY29uU2l6ZSA9IHNpemUgfHwgc3BhY2luZy5pY29uU2l6ZTtcbiAgICBjb25zdCBWZWN0b3JJY29uID0gZ2V0SWNvbkNvbXBvbmVudChpY29uU2V0IHx8IHRoZW1lLmljb25TZXQpO1xuXG4gICAgcmV0dXJuIChcbiAgICAgIDxWZWN0b3JJY29uIG5hbWU9e25hbWV9IHNpemU9e2ljb25TaXplfSBjb2xvcj17aWNvbkNvbG9yfSBzdHlsZT17c3R5bGV9IC8+XG4gICAgKTtcbiAgfVxufVxuXG5JY29uLnByb3BUeXBlcyA9IHByb3BUeXBlcztcbkljb24uZGVmYXVsdFByb3BzID0gZGVmYXVsdFByb3BzO1xuXG5leHBvcnQgZGVmYXVsdCB3aXRoVGhlbWUoSWNvbik7XG4iXX0=

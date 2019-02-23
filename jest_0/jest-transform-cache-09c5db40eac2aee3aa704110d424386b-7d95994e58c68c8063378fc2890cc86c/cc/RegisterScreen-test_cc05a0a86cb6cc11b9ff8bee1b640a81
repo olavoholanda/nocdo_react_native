@@ -1,0 +1,17 @@
+dde8b15628cadc8c97fb17c565d06057
+jest.mock("../../node_modules/react-native-material-ui/");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _RegisterScreen = _interopRequireDefault(require("../RegisterScreen"));
+
+test('renders correctly', function () {
+  var tree = _reactTestRenderer.default.create(_react.default.createElement(_RegisterScreen.default, null)).toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJlZ2lzdGVyU2NyZWVuLXRlc3QuanMiXSwibmFtZXMiOlsiamVzdCIsIm1vY2siLCJ0ZXN0IiwidHJlZSIsInJlbmRlcmVyIiwiY3JlYXRlIiwidG9KU09OIiwiZXhwZWN0IiwidG9NYXRjaFNuYXBzaG90Il0sIm1hcHBpbmdzIjoiQUFLQUEsSUFBSSxDQUFDQyxJQUFMOzs7O0FBTEE7O0FBRUE7O0FBQ0E7O0FBSUFDLElBQUksQ0FBQyxtQkFBRCxFQUFzQixZQUFNO0FBQzlCLE1BQU1DLElBQUksR0FBR0MsMkJBQVNDLE1BQVQsQ0FBZ0IsNkJBQUMsdUJBQUQsT0FBaEIsRUFBb0NDLE1BQXBDLEVBQWI7O0FBQ0FDLEVBQUFBLE1BQU0sQ0FBQ0osSUFBRCxDQUFOLENBQWFLLGVBQWI7QUFDRCxDQUhHLENBQUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5pbXBvcnQgcmVuZGVyZXIgZnJvbSAncmVhY3QtdGVzdC1yZW5kZXJlcic7XG5pbXBvcnQgUmVnaXN0ZXJTY3JlZW4gZnJvbSAnLi4vUmVnaXN0ZXJTY3JlZW4nO1xuXG5qZXN0Lm1vY2soJy4uLy4uL25vZGVfbW9kdWxlcy9yZWFjdC1uYXRpdmUtbWF0ZXJpYWwtdWkvJylcblxudGVzdCgncmVuZGVycyBjb3JyZWN0bHknLCAoKSA9PiB7XG4gIGNvbnN0IHRyZWUgPSByZW5kZXJlci5jcmVhdGUoPFJlZ2lzdGVyU2NyZWVuIC8+KS50b0pTT04oKTtcbiAgZXhwZWN0KHRyZWUpLnRvTWF0Y2hTbmFwc2hvdCgpO1xufSk7Il19

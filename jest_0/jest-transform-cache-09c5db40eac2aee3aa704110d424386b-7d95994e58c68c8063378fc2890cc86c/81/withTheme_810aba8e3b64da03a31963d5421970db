@@ -1,0 +1,57 @@
+39928ba1d30710d65ca0765c51af3f3e
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _hoistNonReactStatics = _interopRequireDefault(require("hoist-non-react-statics"));
+
+var _themeContext = _interopRequireDefault(require("./themeContext"));
+
+var withTheme = function withTheme(WrappedComponent) {
+  var ThemedComponent = function (_React$PureComponent) {
+    (0, _inherits2.default)(ThemedComponent, _React$PureComponent);
+
+    function ThemedComponent() {
+      (0, _classCallCheck2.default)(this, ThemedComponent);
+      return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ThemedComponent).apply(this, arguments));
+    }
+
+    (0, _createClass2.default)(ThemedComponent, [{
+      key: "render",
+      value: function render() {
+        var _this = this;
+
+        return _react.default.createElement(_themeContext.default.Consumer, null, function (theme) {
+          return _react.default.createElement(WrappedComponent, (0, _extends2.default)({}, _this.props, {
+            theme: theme
+          }));
+        });
+      }
+    }]);
+    return ThemedComponent;
+  }(_react.default.PureComponent);
+
+  (0, _hoistNonReactStatics.default)(ThemedComponent, WrappedComponent);
+  return ThemedComponent;
+};
+
+var _default = withTheme;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpdGhUaGVtZS5qcyJdLCJuYW1lcyI6WyJ3aXRoVGhlbWUiLCJXcmFwcGVkQ29tcG9uZW50IiwiVGhlbWVkQ29tcG9uZW50IiwidGhlbWUiLCJwcm9wcyIsIlJlYWN0IiwiUHVyZUNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOztBQUNBOztBQUNBOztBQUdBLElBQU1BLFNBQVMsR0FBRyxTQUFaQSxTQUFZLENBQUFDLGdCQUFnQixFQUFJO0FBQUEsTUFFOUJDLGVBRjhCO0FBQUE7O0FBQUE7QUFBQTtBQUFBO0FBQUE7O0FBQUE7QUFBQTtBQUFBLCtCQUd6QjtBQUFBOztBQUNQLGVBQ0UsNkJBQUMscUJBQUQsQ0FBYyxRQUFkLFFBQ0csVUFBQUMsS0FBSztBQUFBLGlCQUFJLDZCQUFDLGdCQUFELDZCQUFzQixLQUFJLENBQUNDLEtBQTNCO0FBQWtDLFlBQUEsS0FBSyxFQUFFRDtBQUF6QyxhQUFKO0FBQUEsU0FEUixDQURGO0FBS0Q7QUFUaUM7QUFBQTtBQUFBLElBRU5FLGVBQU1DLGFBRkE7O0FBWXBDLHFDQUFxQkosZUFBckIsRUFBc0NELGdCQUF0QztBQUVBLFNBQU9DLGVBQVA7QUFDRCxDQWZEOztlQWlCZUYsUyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgaG9pc3ROb25SZWFjdFN0YXRpY3MgZnJvbSAnaG9pc3Qtbm9uLXJlYWN0LXN0YXRpY3MnO1xuaW1wb3J0IFRoZW1lQ29udGV4dCBmcm9tICcuL3RoZW1lQ29udGV4dCc7XG5cbi8vIFRoaXMgZnVuY3Rpb24gdGFrZXMgYSBjb21wb25lbnQuLi5cbmNvbnN0IHdpdGhUaGVtZSA9IFdyYXBwZWRDb21wb25lbnQgPT4ge1xuICAvLyAuLi5hbmQgcmV0dXJucyBhbm90aGVyIGNvbXBvbmVudC4uLlxuICBjbGFzcyBUaGVtZWRDb21wb25lbnQgZXh0ZW5kcyBSZWFjdC5QdXJlQ29tcG9uZW50IHtcbiAgICByZW5kZXIoKSB7XG4gICAgICByZXR1cm4gKFxuICAgICAgICA8VGhlbWVDb250ZXh0LkNvbnN1bWVyPlxuICAgICAgICAgIHt0aGVtZSA9PiA8V3JhcHBlZENvbXBvbmVudCB7Li4udGhpcy5wcm9wc30gdGhlbWU9e3RoZW1lfSAvPn1cbiAgICAgICAgPC9UaGVtZUNvbnRleHQuQ29uc3VtZXI+XG4gICAgICApO1xuICAgIH1cbiAgfVxuXG4gIGhvaXN0Tm9uUmVhY3RTdGF0aWNzKFRoZW1lZENvbXBvbmVudCwgV3JhcHBlZENvbXBvbmVudCk7XG5cbiAgcmV0dXJuIFRoZW1lZENvbXBvbmVudDtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IHdpdGhUaGVtZTtcbiJdfQ==
