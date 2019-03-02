@@ -1,0 +1,13 @@
+ec0cf8e5f6682a13e6e0de7ae6f9052e
+var _testUtils = require("@material-ui/core/test-utils");
+
+describe('<MyComponent />', function () {
+  var render;
+  before(function () {
+    render = (0, _testUtils.createRender)();
+  });
+  it('should work', function () {
+    var wrapper = render(React.createElement(MyComponent, null));
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJlZ2lzdGVyU2NyZWVuLnRlc3QuanMiXSwibmFtZXMiOlsiZGVzY3JpYmUiLCJyZW5kZXIiLCJiZWZvcmUiLCJpdCIsIndyYXBwZXIiXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBQSxRQUFRLENBQUMsaUJBQUQsRUFBb0IsWUFBTTtBQUNoQyxNQUFJQyxNQUFKO0FBRUFDLEVBQUFBLE1BQU0sQ0FBQyxZQUFNO0FBQ1hELElBQUFBLE1BQU0sR0FBRyw4QkFBVDtBQUNELEdBRkssQ0FBTjtBQUlBRSxFQUFBQSxFQUFFLENBQUMsYUFBRCxFQUFnQixZQUFNO0FBQ3RCLFFBQU1DLE9BQU8sR0FBR0gsTUFBTSxDQUFDLG9CQUFDLFdBQUQsT0FBRCxDQUF0QjtBQUNELEdBRkMsQ0FBRjtBQUdELENBVk8sQ0FBUiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVJlbmRlciB9IGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL3Rlc3QtdXRpbHMnO1xuXG5kZXNjcmliZSgnPE15Q29tcG9uZW50IC8+JywgKCkgPT4ge1xuICBsZXQgcmVuZGVyO1xuXG4gIGJlZm9yZSgoKSA9PiB7XG4gICAgcmVuZGVyID0gY3JlYXRlUmVuZGVyKCk7XG4gIH0pO1xuXG4gIGl0KCdzaG91bGQgd29yaycsICgpID0+IHtcbiAgICBjb25zdCB3cmFwcGVyID0gcmVuZGVyKDxNeUNvbXBvbmVudCAvPik7XG4gIH0pO1xufSk7Il19
