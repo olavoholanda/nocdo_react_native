@@ -8,7 +8,7 @@
     "test": "node ./node_modules/jest/bin/jest.js --watchAll"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-react-native"
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
@@ -21,8 +21,16 @@
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {
+    "babel-jest": "^24.1.0",
     "babel-preset-expo": "^5.0.0",
-    "jest-expo": "^32.0.0"
+    "babel-preset-react-native": "^4.0.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.1.0",
+    "jest-expo": "^32.0.0",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "^16.8.2"
   },
   "private": true
 }
