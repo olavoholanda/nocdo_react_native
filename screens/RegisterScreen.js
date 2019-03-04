@@ -5,7 +5,7 @@ import {
   Text
 } from 'react-native'
 
-import {Button} from 'react-native-material-ui';
+import {Button, Toolbar} from 'react-native-material-ui';
 import {TextField} from 'react-native-material-textfield';
 import {mainColor} from '../constants/Colors';
 
@@ -22,43 +22,45 @@ export default class RegisterScreen extends React.Component {
       console.log('error signing up: ', err)
     }
   }
- 
+
   render() {
     let {name, email, password, passwordConfirmation, phone} = this.state
 
     return (
       <View style={styles.container}>
+        <Toolbar leftElement="arrow-back" centerElement={'Criar nova conta'}
+                   onLeftElementPress={() => this.props.navigation.navigate('Main')}/>
         <View style={styles.registerContainer}>
-            <TextField 
-              tintColor={mainColor} 
-              label={'Nome'} 
+            <TextField
+              tintColor={mainColor}
+              label={'Nome'}
               value={name}
-              onChangeText={ name => this.setState({ name })}/>        
-            <TextField 
-              tintColor={mainColor} 
-              label={'Telefone'} 
-              value={phone} 
-              onChangeText={ phone => this.setState({ phone })}/>              
-            <TextField 
-              tintColor={mainColor} 
-              label={'Email'} 
+              onChangeText={ name => this.setState({ name })}/>
+            <TextField
+              tintColor={mainColor}
+              label={'Telefone'}
+              value={phone}
+              onChangeText={ phone => this.setState({ phone })}/>
+            <TextField
+              tintColor={mainColor}
+              label={'Email'}
               value={email}
               autoCapitalize="none"
               onChangeText={ email => this.setState({ email })}/>
-            <TextField 
+            <TextField
               tintColor={mainColor}
-              label={'Senha'} 
+              label={'Senha'}
               value={password}
               secureTextEntry={true}
-              autoCapitalize="none" 
+              autoCapitalize="none"
               onChangeText={ password => this.setState({ password })}/>
-            <TextField 
+            <TextField
               tintColor={mainColor}
-              label={'Confirmar senha'} 
+              label={'Confirmar senha'}
               value={passwordConfirmation}
               secureTextEntry={true}
-              autoCapitalize="none" 
-              onChangeText={ passwordConfirmation => this.setState({ passwordConfirmation })}/>              
+              autoCapitalize="none"
+              onChangeText={ passwordConfirmation => this.setState({ passwordConfirmation })}/>
 
             <Button raised primary text='Registrar' onPress={this.signUp}>
               <Text>Registrar</Text>
@@ -76,6 +78,6 @@ const styles = StyleSheet.create({
     },
     registerContainer: {
         padding: 50,
-    }  
-  
+    }
+
 })
