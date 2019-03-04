@@ -6,6 +6,8 @@ import AppNavigator from './navigation/AppNavigator';
 import {ThemeContext, getTheme, Toolbar} from 'react-native-material-ui';
 import { mainColor, accentColor, textColor, darkTextColor, greyTextColor } from './constants/Colors'
 
+const statusBarHeight = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight
+
 // you can set your style right here, it'll be propagated to application
 const uiTheme = {
   palette: {
@@ -17,6 +19,7 @@ const uiTheme = {
   },
   toolbar: {
     container: {
+      paddingTop: statusBarHeight,
       height: 80,
     },
   },
