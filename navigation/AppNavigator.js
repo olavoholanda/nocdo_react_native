@@ -1,14 +1,14 @@
 import React from 'react'
-import {createAppContainer, createStackNavigator, createSwitchNavigator} from 'react-navigation'
+import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 
 import SignInScreen from '../screens/SignInScreen'
 import RegisterScreen from '../screens/RegisterScreen'
-
-
-const AuthStack = createStackNavigator({Register: RegisterScreen}) 
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
 
 export default createAppContainer(createSwitchNavigator({
-    Main: AuthStack,
+    Main: SignInScreen,
+    ForgotPassword: ForgotPasswordScreen,
+    RegisterScreen: RegisterScreen,
 }))
 
 // export default createAppContainer(createSwitchNavigator({

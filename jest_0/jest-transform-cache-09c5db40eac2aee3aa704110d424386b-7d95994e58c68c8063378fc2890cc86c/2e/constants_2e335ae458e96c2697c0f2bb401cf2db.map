@@ -1,1 +1,0 @@
-{"version":3,"sources":["constants.js"],"names":["LINT","ELEVATION_ZINDEX"],"mappings":";;;;AAAO,IAAMA,IAAI,GAAG,CAAb;;AACA,IAAMC,gBAAgB,GAAG,CAAzB","sourcesContent":["export const LINT = 1;\nexport const ELEVATION_ZINDEX = 1;\n"]}
