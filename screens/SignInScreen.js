@@ -16,6 +16,15 @@ export default class SignInScreen extends React.Component {
     password: '',
   }
 
+  signIn = async () => {
+    const { email, password } = this.state
+    try {
+      console.log('user successfully signed in!: ', email)
+    } catch (err) {
+      console.log('error signing in: ', err)
+    }
+  }
+
   render () {
     let {email, password} = this.state
     return (
@@ -29,7 +38,7 @@ export default class SignInScreen extends React.Component {
                        onChangeText={password => this.setState({password})}/>
           </View>
           <View style={styles.fixedPadding}>
-            <Button raised accent text='Entrar'/>
+            <Button raised accent text='Entrar' onPress={this.signIn}/>
           </View>
           <View style={styles.linkContainer}>
             <Text style={styles.link}
