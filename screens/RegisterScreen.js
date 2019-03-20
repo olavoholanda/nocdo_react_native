@@ -2,12 +2,12 @@ import React from 'react'
 import {
   View,
   StyleSheet,
-  Text
+  Text, KeyboardAvoidingView, ScrollView
 } from 'react-native'
 
-import {Button, Toolbar} from 'react-native-material-ui';
-import {TextField} from 'react-native-material-textfield';
-import {mainColor} from '../constants/Colors';
+import { Button, Toolbar } from 'react-native-material-ui'
+import { TextField } from 'react-native-material-textfield'
+import { mainColor } from '../constants/Colors'
 
 export default class RegisterScreen extends React.Component {
   state = {
@@ -15,7 +15,7 @@ export default class RegisterScreen extends React.Component {
   }
 
   signUp = async () => {
-    const { name, email, password, passwordConfirmation, phone } = this.state
+    const {name, email, password, passwordConfirmation, phone} = this.state
     try {
       console.log('user successfully signed up!: ', name)
     } catch (err) {
@@ -23,61 +23,69 @@ export default class RegisterScreen extends React.Component {
     }
   }
 
-  render() {
+  render () {
     let {name, email, password, passwordConfirmation, phone} = this.state
 
     return (
-      <View style={styles.container}>
-        <Toolbar leftElement="arrow-back" centerElement={'Criar nova conta'}
+      <KeyboardAvoidingView style={styles.container} behavior='padding' enabled>
+        <ScrollView>
+          <Toolbar leftElement="arrow-back" centerElement={'Criar nova conta'}
                    onLeftElementPress={() => this.props.navigation.navigate('Main')}/>
-        <View style={styles.registerContainer}>
+          <View style={styles.registerContainer}>
             <TextField
               tintColor={mainColor}
               label={'Nome'}
               value={name}
-              onChangeText={ name => this.setState({ name })}/>
+              returnKeyType='next'
+              onChangeText={name => this.setState({name})}/>
             <TextField
               tintColor={mainColor}
               label={'Telefone'}
               value={phone}
-              onChangeText={ phone => this.setState({ phone })}/>
+              onChangeText={phone => this.setState({phone})}/>
             <TextField
               tintColor={mainColor}
               label={'Email'}
               value={email}
               autoCapitalize="none"
-              onChangeText={ email => this.setState({ email })}/>
+              onChangeText={email => this.setState({email})}/>
             <TextField
               tintColor={mainColor}
               label={'Senha'}
               value={password}
               secureTextEntry={true}
               autoCapitalize="none"
-              onChangeText={ password => this.setState({ password })}/>
+              onChangeText={password => this.setState({password})}/>
             <TextField
               tintColor={mainColor}
               label={'Confirmar senha'}
               value={passwordConfirmation}
               secureTextEntry={true}
               autoCapitalize="none"
-              onChangeText={ passwordConfirmation => this.setState({ passwordConfirmation })}/>
+              onChangeText={passwordConfirmation => this.setState({passwordConfirmation})}/>
 
-            <Button raised primary text='Registrar' onPress={this.signUp}>
+            <Button raised primary text='Registrar' onPress={this.signUp} style={styles.registerButton}>
               <Text>Registrar</Text>
             </Button>
-        </View>
-      </View>
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
     )
   }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-    registerContainer: {
-        padding: 50,
-    }
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  registerContainer: {
+    paddingTop: 15,
+    paddingLeft: 40,
+    paddingRight: 40,
+  },
+  registerButton: {
+    paddingTop: 15,
+  }
 
 })
