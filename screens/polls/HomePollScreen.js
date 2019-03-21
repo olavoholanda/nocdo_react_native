@@ -1,13 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, Dimensions } from 'react-native'
-import { TabView, SceneMap } from 'react-native-tab-view'
-
-const FirstRoute = () => (
-  <View style={[styles.scene, {backgroundColor: '#ff4081'}]}/>
-)
-const SecondRoute = () => (
-  <View style={[styles.scene, {backgroundColor: '#673ab7'}]}/>
-)
+import { Button, Toolbar } from 'react-native-material-ui'
 
 export default class HomePollScreen extends React.Component {
   state = {
@@ -20,21 +13,20 @@ export default class HomePollScreen extends React.Component {
 
   render () {
     return (
-      <TabView
-        navigationState={this.state}
-        renderScene={SceneMap({
-          first: FirstRoute,
-          second: SecondRoute,
-        })}
-        onIndexChange={index => this.setState({index})}
-        initialLayout={{width: Dimensions.get('window').width}}
-      />
+      <View styles={styles.container}>
+        <Toolbar
+          leftElement="menu"
+          onLeftElementPress={() => this.props.navigation.toggleDrawer()}
+          centerElement={'Enquetes'}
+          rightElement="search"
+        />
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  scene: {
+  container: {
     flex: 1,
   },
 })

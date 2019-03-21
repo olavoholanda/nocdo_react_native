@@ -4,8 +4,13 @@ import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-na
 import { lightColor, backgroundColor, accentColor } from '../constants/Colors'
 //menu screens
 import Feed from '../screens/feed/HomeFeedScreen'
-import Poll from '../screens/polls/HomePollScreen'
-import Reservation from '../screens/reservations/HomeReservationScreen'
+import Notices from '../screens/notices/HomeNoticesScreen'
+import Lobby from '../screens/lobby/HomeLobbyScreen'
+import Employees from '../screens/employees/HomeEmployeesScreen'
+import Reservations from '../screens/reservations/HomeReservationScreen'
+import Polls from '../screens/polls/HomePollScreen'
+import Documents from '../screens/documents/HomeDocumentsScreen'
+import Incidents from '../screens/incidents/HomeIncidentsScreen'
 
 const WIDTH = Dimensions.get('window').width
 const statusBarHeight = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight
@@ -34,11 +39,26 @@ const AppDrawerNavigator = createDrawerNavigator(
     Início: {
       screen: Feed
     },
-    Enquetes: {
-      screen: Poll
+    Avisos: {
+      screen: Notices
+    },
+    Portaria: {
+      screen: Lobby
+    },
+    Colaboradores: {
+      screen: Employees
     },
     Reservas: {
-      screen: Reservation
+      screen: Reservations
+    },
+    Enquetes: {
+      screen: Polls
+    },
+    Documentos: {
+      screen: Documents
+    },
+    Ocorrências: {
+      screen: Incidents
     },
   },
   DrawerConfig
