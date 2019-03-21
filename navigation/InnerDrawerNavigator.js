@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, SafeAreaView, ScrollView, StyleSheet, View, Dimensions, Platform, StatusBar } from 'react-native'
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation'
-import { lightColor, mainColor, accentColor } from '../constants/Colors'
+import { lightColor, backgroundColor, accentColor } from '../constants/Colors'
 //menu screens
 import Feed from '../screens/feed/HomeFeedScreen'
 import Poll from '../screens/polls/HomePollScreen'
@@ -10,6 +10,8 @@ import Reservation from '../screens/reservations/HomeReservationScreen'
 const WIDTH = Dimensions.get('window').width
 const statusBarHeight = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight
 
+//Safe Area View will handle status bar of iphone X
+//DrawerItems will be the navigation items
 const CustomDrawerComponent = (props) => (
   <SafeAreaView style={styles.container}>
     <View style={styles.header}>
@@ -22,7 +24,7 @@ const CustomDrawerComponent = (props) => (
 )
 
 const DrawerConfig = {
-  drawerWidth: WIDTH * 0.83,
+  drawerWidth: WIDTH * 0.83, //83% of the cell width
   contentComponent: CustomDrawerComponent,
 }
 
@@ -50,12 +52,12 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: statusBarHeight,
     height: 150 + statusBarHeight,
-    backgroundColor: mainColor,
+    backgroundColor: accentColor,
     justifyContent: 'center',
     alignItems: 'center',
   },
   headerImg: {
-    backgroundColor: accentColor,
+    backgroundColor: backgroundColor,
     height: 100,
     width: 100,
     borderRadius: 50,
