@@ -1,0 +1,150 @@
+[
+  {
+    "id": "710fbd29-ec23-4c51-a311-cc87e453df94",
+    "title": "Vocês gostariam de ter um app para facilitar a interação com o condomínio?",
+    "status": "open",
+    "startDate": "2019-03-20T00:00:00",
+    "endDate": "2019-03-30T00:00:00",
+    "numberOfVotes": 73,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Sim",
+        "numberOfVotes": 73
+      },
+      {
+        "title": "Não",
+        "numberOfVotes": 0
+      }
+    ]
+  },
+  {
+    "id": "5f5f8a1b-825b-451c-89c6-6af2003595e6",
+    "title": "O que vocês acham de uma academia no condomínio?",
+    "status": "open",
+    "startDate": "2019-03-20T00:00:00",
+    "endDate": "2019-03-30T00:00:00",
+    "numberOfVotes": 7,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Apoiado",
+        "numberOfVotes": 4
+      },
+      {
+        "title": "Desnecessário",
+        "numberOfVotes": 3
+      }
+    ]
+  },
+  {
+    "id": "7ca04e21-ef9e-42de-9b2d-62ef3e96f131",
+    "title": "Deveriamos mudar as regras pra animais?",
+    "status": "open",
+    "startDate": "2019-03-20T00:00:00",
+    "endDate": "2019-03-24T00:00:00",
+    "numberOfVotes": 21,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Sim",
+        "numberOfVotes": 15
+      },
+      {
+        "title": "Não",
+        "numberOfVotes": 6
+      }
+    ]
+  },
+  {
+    "id": "1eaf4de0-c5ba-4bc3-ba53-7169376a4db3",
+    "title": "O condomínio deveria adotar um projeto de lixo reciclável?",
+    "status": "open",
+    "startDate": "2019-03-20T00:00:00",
+    "endDate": "2019-03-22T00:00:00",
+    "numberOfVotes": 15,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Sim",
+        "numberOfVotes": 10
+      },
+      {
+        "title": "Não",
+        "numberOfVotes": 5
+      }
+    ]
+  },
+  {
+    "id": "bc9e26fe-3dcc-4f8d-a4e4-7d2672d7b981",
+    "title": "No lugar do campo de futebol, o que podemos colocar?",
+    "status": "closed",
+    "startDate": "2019-03-10T00:00:00",
+    "endDate": "2019-03-20T00:00:00",
+    "numberOfVotes": 18,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Campo de futebol de areia",
+        "numberOfVotes": 7
+      },
+      {
+        "title": "Uma praça para crianças",
+        "numberOfVotes": 9
+      },
+      {
+        "title": "Um coreto",
+        "numberOfVotes": 2
+      }
+    ]
+  },
+  {
+    "id": "93606bfe-33c0-40e1-a52e-b0f7d089520d",
+    "title": "Qual deve ser o nome do condomínio?",
+    "status": "closed",
+    "startDate": "2019-03-10T00:00:00",
+    "endDate": "2019-03-15T00:00:00",
+    "numberOfVotes": 60,
+    "author": {
+      "name": "João Silva",
+      "sub": "153e26fe-5931-44af-8e00-304055c23c55"
+    },
+    "options": [
+      {
+        "title": "Bosque do Horto 1",
+        "numberOfVotes": 6
+      },
+      {
+        "title": "Varandas do Horto 1",
+        "numberOfVotes": 13
+      },
+      {
+        "title": "Jardim do Horto 1",
+        "numberOfVotes": 32
+      },
+      {
+        "title": "Alamedas do Horto 1",
+        "numberOfVotes": 8
+      },
+      {
+        "title": "Nenhuma das Alternativas",
+        "numberOfVotes": 1
+      }
+    ]
+  }
+]
