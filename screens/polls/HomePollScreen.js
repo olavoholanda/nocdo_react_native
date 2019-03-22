@@ -22,7 +22,7 @@ export default class HomePollScreen extends React.Component {
         <ScrollView>
           <FlatList
             data={this.state.polls}
-            renderItem={({item}) => <PollListItem item={item} onPress={() => {}}/>}
+            renderItem={({item}) => <PollListItem item={item} onPress={() => this.props.navigation.navigate('ShowPoll', {pollId: item.id})}/>}
             keyExtractor={item => item.id}
           />
         </ScrollView>
