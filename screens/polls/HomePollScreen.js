@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, StyleSheet, FlatList, Text } from 'react-native'
-import { Toolbar, ListItem } from 'react-native-material-ui'
+import { View, StyleSheet, FlatList, Text, ScrollView } from 'react-native'
+import { Toolbar } from 'react-native-material-ui'
+import PollListItem from '../../components/PollListItem'
 import { accentColor, lightColor, backgroundColor } from '../../constants/Colors'
 
 export default class HomePollScreen extends React.Component {
@@ -18,21 +19,13 @@ export default class HomePollScreen extends React.Component {
           centerElement={'Enquetes'}
           rightElement="search"
         />
-        <View>
+        <ScrollView>
           <FlatList
             data={this.state.polls}
-            renderItem={({item}) => <ListItem
-              numberOfLines='dynamic'
-              style={listItem}
-              centerElement={{
-                primaryText: `${item.author.name}  |  Votos: ${item.numberOfVotes}`,
-                secondaryText: item.title,
-              }}
-              onPress={() => {}}
-            />}
+            renderItem={({item}) => <PollListItem item={item} onPress={() => {}}/>}
             keyExtractor={item => item.id}
           />
-        </View>
+        </ScrollView>
       </View>
     )
   }

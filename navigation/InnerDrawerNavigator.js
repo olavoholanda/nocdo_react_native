@@ -36,6 +36,9 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
+    Enquetes: {
+      screen: Polls
+    },
     Início: {
       screen: Feed
     },
@@ -50,9 +53,6 @@ const AppDrawerNavigator = createDrawerNavigator(
     },
     Reservas: {
       screen: Reservations
-    },
-    Enquetes: {
-      screen: Polls
     },
     Documentos: {
       screen: Documents
