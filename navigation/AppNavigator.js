@@ -6,18 +6,17 @@ import InnerDrawerNavigator from './InnerDrawerNavigator'
 import SignInScreen from '../screens/SignInScreen'
 import RegisterScreen from '../screens/RegisterScreen'
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
+
+//POLLS
 import ShowPollScreen from '../screens/polls/ShowPollScreen'
+import PollResultScreen from '../screens/polls/PollResultScreen'
 
 export default createAppContainer(createSwitchNavigator({
+    // Main: SignInScreen,
     Main: InnerDrawerNavigator,
     ForgotPassword: ForgotPasswordScreen,
     RegisterScreen: RegisterScreen,
     HomeScreen: InnerDrawerNavigator,
-    ShowPoll: ShowPollScreen,
+    PollShow: ShowPollScreen,
+    PollResult: PollResultScreen,
 }))
-
-// export default createAppContainer(createSwitchNavigator({
-//   // You could add another route here for authentication.
-//   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-//   Main: MainTabNavigator,
-// }));

@@ -1,13 +1,18 @@
 import React from 'react'
-import { View, StyleSheet, FlatList, Text, ScrollView } from 'react-native'
+import { View, StyleSheet, FlatList, ScrollView } from 'react-native'
 import { Toolbar } from 'react-native-material-ui'
-import PollListItem from '../../components/PollListItem'
-import { accentColor, lightColor, backgroundColor } from '../../constants/Colors'
+import PollListItem from '../../components/poll/PollListItem'
+import { backgroundColor } from '../../constants/Colors'
 
 export default class HomePollScreen extends React.Component {
   constructor (props) {
     super(props)
     this.state = {polls: require('./dummyData/dummyList.json')}
+  }
+
+  _onItemPress = (status, pollId) => {
+    const route = status === 'open' ? 'PollShow' : 'PollResult'
+    this.props.navigation.navigate(route, {pollId: pollId})
   }
 
   render () {
@@ -22,7 +27,7 @@ export default class HomePollScreen extends React.Component {
         <ScrollView>
           <FlatList
             data={this.state.polls}
-            renderItem={({item}) => <PollListItem item={item} onPress={() => this.props.navigation.navigate('ShowPoll', {pollId: item.id})}/>}
+            renderItem={({item}) => <PollListItem item={item} onPress={() => this._onItemPress(item.status, item.id)}/>}
             keyExtractor={item => item.id}
           />
         </ScrollView>
@@ -30,20 +35,6 @@ export default class HomePollScreen extends React.Component {
     )
   }
 }
-
-const listItem = StyleSheet.create({
-  container: {
-    marginTop: 15,
-    marginLeft: 15,
-    marginRight: 15,
-    backgroundColor: lightColor,
-  },
-  primaryText: {
-    color: accentColor,
-    fontWeight: 'bold',
-  }
-
-})
 
 const styles = StyleSheet.create({
   container: {

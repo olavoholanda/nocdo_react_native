@@ -12,10 +12,12 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Sim",
         "numberOfVotes": 73
       },
       {
+        "id": "2",
         "title": "Não",
         "numberOfVotes": 0
       }
@@ -34,10 +36,12 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Apoiado",
         "numberOfVotes": 4
       },
       {
+        "id": "2",
         "title": "Desnecessário",
         "numberOfVotes": 3
       }
@@ -56,10 +60,12 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Sim",
         "numberOfVotes": 15
       },
       {
+        "id": "2",
         "title": "Não",
         "numberOfVotes": 6
       }
@@ -78,10 +84,12 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Sim",
         "numberOfVotes": 10
       },
       {
+        "id": "2",
         "title": "Não",
         "numberOfVotes": 5
       }
@@ -100,16 +108,22 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Campo de futebol de areia",
-        "numberOfVotes": 7
+        "numberOfVotes": 7,
+        "winner": false
       },
       {
+        "id": "2",
         "title": "Uma praça para crianças",
-        "numberOfVotes": 9
+        "numberOfVotes": 9,
+        "winner": true
       },
       {
+        "id": "3",
         "title": "Um coreto",
-        "numberOfVotes": 2
+        "numberOfVotes": 2,
+        "winner": false
       }
     ]
   },
@@ -126,24 +140,34 @@
     },
     "options": [
       {
+        "id": "1",
         "title": "Bosque do Horto 1",
-        "numberOfVotes": 6
+        "numberOfVotes": 6,
+        "winner": false
       },
       {
+        "id": "2",
         "title": "Varandas do Horto 1",
-        "numberOfVotes": 13
+        "numberOfVotes": 13,
+        "winner": false
       },
       {
+        "id": "3",
         "title": "Jardim do Horto 1",
-        "numberOfVotes": 32
+        "numberOfVotes": 32,
+        "winner": true
       },
       {
+        "id": "4",
         "title": "Alamedas do Horto 1",
-        "numberOfVotes": 8
+        "numberOfVotes": 8,
+        "winner": false
       },
       {
+        "id": "5",
         "title": "Nenhuma das Alternativas",
-        "numberOfVotes": 1
+        "numberOfVotes": 1,
+        "winner": false
       }
     ]
   }

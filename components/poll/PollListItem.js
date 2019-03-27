@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, Text, View } from 'react-native'
 import { ListItem, Icon } from 'react-native-material-ui'
-import { accentColor, backgroundColor, lightGreyColor, mainColor } from '../constants/Colors'
+import { accentColor, backgroundColor, lightGreyColor, mainColor } from '../../constants/Colors'
 
 const listItem = StyleSheet.create({
   container: {

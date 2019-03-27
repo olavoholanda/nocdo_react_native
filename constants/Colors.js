@@ -1,6 +1,6 @@
-export const darkColor = '#E64A19';
+export const darkColor = '#c41c00';
 export const mainColor = '#FF5722';
-export const lightColor = '#FFCCBC';
+export const lightColor = '#ff8a50';
 export const backgroundColor = '#e5e5e5';
 export const textColor = '#FFF';
 export const accentColor = '#607D8B';
@@ -8,3 +8,4 @@ export const darkTextColor = '#212121';
 export const greyTextColor = '#757575';
 export const lightGreyColor = '#B5B5B5';
 export const dividerColor = '#BDBDBD';
+export const greenColor = '#4caf50';
