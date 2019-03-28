@@ -8,6 +8,7 @@ import RegisterScreen from '../screens/RegisterScreen'
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
 
 //POLLS
+import PollCreateScreen from '../screens/polls/PollCreateScreen'
 import ShowPollScreen from '../screens/polls/ShowPollScreen'
 import PollResultScreen from '../screens/polls/PollResultScreen'
 
@@ -16,7 +17,8 @@ export default createAppContainer(createSwitchNavigator({
     Main: InnerDrawerNavigator,
     ForgotPassword: ForgotPasswordScreen,
     RegisterScreen: RegisterScreen,
-    HomeScreen: InnerDrawerNavigator,
+    InnerHome: InnerDrawerNavigator,
     PollShow: ShowPollScreen,
     PollResult: PollResultScreen,
+    PollCreate: PollCreateScreen,
 }))

@@ -50,8 +50,8 @@ class PollResultScreen extends React.Component {
       <View style={styles.container}>
         <Toolbar
           leftElement="arrow-back"
-          onLeftElementPress={() => this.props.navigation.goBack()}
-          centerElement={'Enquete'}
+          onLeftElementPress={() => this.props.navigation.navigate('InnerHome')}
+          centerElement={'Resultado de enquete'}
         />
         <ScrollView>
           <View style={styles.header}>

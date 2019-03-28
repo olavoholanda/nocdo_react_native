@@ -22,7 +22,8 @@ export default class HomePollScreen extends React.Component {
           leftElement="menu"
           onLeftElementPress={() => this.props.navigation.toggleDrawer()}
           centerElement={'Enquetes'}
-          rightElement="search"
+          rightElement="add"
+          onRightElementPress={() => this.props.navigation.navigate('PollCreate')}
         />
         <ScrollView>
           <FlatList

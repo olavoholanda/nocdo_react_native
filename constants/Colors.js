@@ -9,3 +9,4 @@ export const greyTextColor = '#757575';
 export const lightGreyColor = '#B5B5B5';
 export const dividerColor = '#BDBDBD';
 export const greenColor = '#4caf50';
+export const modalColor = 'rgba(52, 52, 52, 0.8)';
