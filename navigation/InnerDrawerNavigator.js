@@ -1,7 +1,8 @@
 import React from 'react'
-import { Image, SafeAreaView, ScrollView, StyleSheet, View, Dimensions, Platform, StatusBar } from 'react-native'
+import { Text, Image, SafeAreaView, ScrollView, StyleSheet, View, Dimensions, Platform, StatusBar } from 'react-native'
 import { createAppContainer, createDrawerNavigator, DrawerItems } from 'react-navigation'
-import { lightColor, backgroundColor, accentColor } from '../constants/Colors'
+import { Button, Icon } from 'react-native-material-ui'
+import { lightColor, backgroundColor, textColor, mainColor, } from '../constants/Colors'
 //menu screens
 import Feed from '../screens/feed/HomeFeedScreen'
 import Notices from '../screens/notices/HomeNoticesScreen'
@@ -15,15 +16,52 @@ import Incidents from '../screens/incidents/HomeIncidentsScreen'
 const WIDTH = Dimensions.get('window').width
 const statusBarHeight = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: backgroundColor,
+  },
+  header: {
+    flexDirection: 'row',
+    paddingTop: statusBarHeight,
+    height: 130 + statusBarHeight,
+    backgroundColor: mainColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerImg: {
+    backgroundColor: backgroundColor,
+    height: 80,
+    width: 80,
+    borderRadius: 40,
+  },
+  name: {
+    color: textColor,
+    fontWeight: 'bold',
+  }
+})
+
 //Safe Area View will handle status bar of iphone X
 //DrawerItems will be the navigation items
 const CustomDrawerComponent = (props) => (
   <SafeAreaView style={styles.container}>
     <View style={styles.header}>
-      <Image source={require('../assets/images/jdh/logo.png')} style={styles.headerImg}/>
+      <Image source={{uri: 'https://randomuser.me/api/portraits/men/79.jpg'}} style={styles.headerImg}/>
+      <View style={{marginLeft: 10}}>
+        <Text style={styles.name}>Alexandre Moura</Text>
+        <Text style={styles.name}>a.moura@gmail.com</Text>
+      </View>
+    </View>
+    <View style={{alignItems: 'center', justifyContent: 'center', backgroundColor: lightColor, height: 50}}>
+      <Text style={styles.name}>Jardim do Horto 1</Text>
     </View>
     <ScrollView>
-      <DrawerItems {...props} />
+      <DrawerItems
+        {...props}
+        activeBackgroundColor={backgroundColor}
+        activeTintColor={mainColor}
+        inactiveBackgroundColor={backgroundColor}
+      />
     </ScrollView>
   </SafeAreaView>
 )
@@ -36,52 +74,64 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Enquetes: {
-      screen: Polls
+    Polls: {
+      screen: Polls,
+      navigationOptions: {
+        drawerLabel: "Enquetes",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="poll"/>)
+      }
     },
-    Início: {
-      screen: Feed
+    Home: {
+      screen: Feed,
+      navigationOptions: {
+        drawerLabel: "Início",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="home"/>)
+      }
     },
-    Avisos: {
-      screen: Notices
+    Notice: {
+      screen: Notices,
+      navigationOptions: {
+        title: "Avisos",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="speaker-notes"/>)
+      }
     },
-    Portaria: {
-      screen: Lobby
+    Lobby: {
+      screen: Lobby,
+      navigationOptions: {
+        title: "Portaria",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="message"/>)
+      }
     },
-    Colaboradores: {
-      screen: Employees
+    Employees: {
+      screen: Employees,
+      navigationOptions: {
+        title: "Colaboradores",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="perm-contact-calendar"/>)
+      }
     },
-    Reservas: {
-      screen: Reservations
+    Reservations: {
+      screen: Reservations,
+      navigationOptions: {
+        title: "Reservas",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="event"/>)
+      }
     },
-    Documentos: {
-      screen: Documents
+    Documents: {
+      screen: Documents,
+      navigationOptions: {
+        title: "Documentos",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="insert-drive-file"/>)
+      }
     },
-    Ocorrências: {
-      screen: Incidents
+    Incidents: {
+      screen: Incidents,
+      navigationOptions: {
+        title: "Ocorrências",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="feedback"/>)
+      }
     },
   },
   DrawerConfig
 )
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: lightColor,
-  },
-  header: {
-    paddingTop: statusBarHeight,
-    height: 150 + statusBarHeight,
-    backgroundColor: accentColor,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerImg: {
-    backgroundColor: backgroundColor,
-    height: 100,
-    width: 100,
-    borderRadius: 50,
-  },
-})
 
 export default createAppContainer(AppDrawerNavigator)
