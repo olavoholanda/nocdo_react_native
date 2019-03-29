@@ -1,8 +1,9 @@
 import React from 'react'
-import { FlatList, KeyboardAvoidingView, Modal, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, View } from 'react-native'
 import { Button, ListItem, Toolbar } from 'react-native-material-ui'
 import { TextField } from 'react-native-material-textfield'
-import { backgroundColor, darkTextColor, mainColor, modalColor } from '../../constants/Colors'
+import { backgroundColor, darkTextColor, mainColor } from '../../constants/Colors'
+import ModalInput from '../../components/ModalInput'
 
 const styles = StyleSheet.create({
   container: {
@@ -20,43 +21,25 @@ const styles = StyleSheet.create({
   },
 })
 
-const buttonStyle = StyleSheet.create({
-  container: {
-    borderRadius: 0,
-    height: 60,
-    backgroundColor: mainColor
-  },
-})
-
 class ShowPollScreen extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       modalVisible: false,
       title: '',
-      currentOption: '',
       options: ['Sim', 'Não']
     }
   }
 
-  _closeOptionModal = async () => {
-    this.setState({modalVisible: false})
-  }
-
   _newOptionModal = async () => {
     this.setState({modalVisible: true})
-    setTimeout(() => {
-      this._textInput.focus()
-    }, 1000)
   }
 
-  _confirmNewOption = async () => {
-    const {options, currentOption} = this.state
-    options.push(currentOption)
+  _confirmOption = async (value) => {
+    const {options} = this.state
+    options.push(value)
     this.setState({
-      currentOption: '',
       options: options,
-      modalVisible: false
     })
   }
 
@@ -79,7 +62,7 @@ class ShowPollScreen extends React.Component {
   }
 
   render () {
-    const {title, currentOption} = this.state
+    const {title} = this.state
     return (
       <View style={styles.container}>
         <Toolbar
@@ -87,33 +70,7 @@ class ShowPollScreen extends React.Component {
           onLeftElementPress={() => this.props.navigation.navigate('InnerHome')}
           centerElement={'Nova enquete'}
         />
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            console.log('closing modal')
-          }}>
-          <View style={{flex: 1}}>
-            <View style={{flex: 4, backgroundColor: modalColor}}>
-              <TouchableOpacity style={{flex: 1}} onPress={this._closeOptionModal}/>
-            </View>
-            <View style={{flex: 3, backgroundColor: backgroundColor}}>
-              <KeyboardAvoidingView behavior='padding' enabled>
-                <TextField
-                  ref={component => this._textInput = component}
-                  tintColor={mainColor}
-                  label={'Opção'}
-                  value={currentOption}
-                  returnKeyType={'done'}
-                  multiline={true}
-                  containerStyle={{margin: 10}}
-                  onChangeText={currentOption => this.setState({currentOption})}/>
-                <Button raised primary text='CONFIRMAR' style={buttonStyle} onPress={this._confirmNewOption}/>
-              </KeyboardAvoidingView>
-            </View>
-          </View>
-        </Modal>
+        <ModalInput modalVisible={this.state.modalVisible} buttonLabel='Confirmar' inputLabel='Opção' onConfirm={this._confirmOption} />
         <ScrollView>
           <View style={styles.header}>
             <TextField
