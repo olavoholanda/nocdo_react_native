@@ -21,6 +21,14 @@ const styles = StyleSheet.create({
   },
 })
 
+const buttonStyle = StyleSheet.create({
+  container: {
+    borderRadius: 0,
+    height: 60,
+    backgroundColor: mainColor
+  },
+})
+
 class ShowPollScreen extends React.Component {
   constructor (props) {
     super(props)
