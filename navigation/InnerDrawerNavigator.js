@@ -92,14 +92,14 @@ const AppDrawerNavigator = createDrawerNavigator(
       screen: Notices,
       navigationOptions: {
         title: "Avisos",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="speaker-notes"/>)
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="message"/>)
       }
     },
     Lobby: {
       screen: Lobby,
       navigationOptions: {
         title: "Portaria",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="message"/>)
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="people"/>)
       }
     },
     Employees: {
