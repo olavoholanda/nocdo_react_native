@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardAvoidingView, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { backgroundColor, mainColor, modalColor } from '../constants/Colors'
 import { TextField } from 'react-native-material-textfield'
 import { Button } from 'react-native-material-ui'
@@ -22,7 +22,7 @@ class ModalInput extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate (prevProps) {
     if (this.props.modalVisible !== prevProps.modalVisible) {
       this.setState({modalVisible: this.props.modalVisible})
       setTimeout(() => {
@@ -45,7 +45,7 @@ class ModalInput extends React.Component {
     this.props.onConfirm(value)
   }
 
-  render() {
+  render () {
     const {inputLabel, buttonLabel, value} = this.props
 
     return (

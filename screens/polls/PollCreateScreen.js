@@ -70,7 +70,8 @@ class ShowPollScreen extends React.Component {
           onLeftElementPress={() => this.props.navigation.navigate('InnerHome')}
           centerElement={'Nova enquete'}
         />
-        <ModalInput modalVisible={this.state.modalVisible} buttonLabel='Confirmar' inputLabel='Opção' onConfirm={this._confirmOption} />
+        <ModalInput modalVisible={this.state.modalVisible} buttonLabel='Confirmar' inputLabel='Opção'
+                    onConfirm={this._confirmOption}/>
         <ScrollView>
           <View style={styles.header}>
             <TextField
