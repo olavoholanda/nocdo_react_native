@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeyboardAvoidingView, Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { backgroundColor, mainColor, modalColor } from '../constants/Colors'
 import { TextField } from 'react-native-material-textfield'
 import { Button } from 'react-native-material-ui'
@@ -25,14 +25,17 @@ class ModalInput extends React.Component {
   componentDidUpdate (prevProps) {
     if (this.props.modalVisible !== prevProps.modalVisible) {
       this.setState({modalVisible: this.props.modalVisible})
-      setTimeout(() => {
-        this._textInput.focus()
-      }, 700)
+      if (this.props.modalVisible) {
+        setTimeout(() => {
+          this._textInput.focus()
+        }, 700)
+      }
     }
   }
 
   _closeModal = async () => {
     this.setState({modalVisible: false})
+    this.props.onClose()
   }
 
   _confirmNewOption = async () => {
@@ -53,15 +56,14 @@ class ModalInput extends React.Component {
         animationType="slide"
         transparent={true}
         visible={this.state.modalVisible}
-        onRequestClose={() => {
-          console.log('closing modal')
-        }}>
-        <View style={{flex: 1}}>
-          <View style={{flex: 4, backgroundColor: modalColor}}>
-            <TouchableOpacity style={{flex: 1}} onPress={this._closeModal}/>
-          </View>
-          <View style={{flex: 3, backgroundColor: backgroundColor}}>
-            <KeyboardAvoidingView behavior='padding' enabled>
+        onRequestClose={() => console.log('closing modal')}
+      >
+        <View style={{flex: 1, height: '100%'}}>
+          <View style={{backgroundColor: modalColor, display: 'flex', height: '100%'}}>
+            <View style={{flex: 2, backgroundColor: modalColor}}>
+              <TouchableOpacity style={{flex: 1}} onPress={this._closeModal}/>
+            </View>
+            <View style={{backgroundColor: backgroundColor}}>
               <TextField
                 ref={component => this._textInput = component}
                 tintColor={mainColor}
@@ -71,8 +73,9 @@ class ModalInput extends React.Component {
                 multiline={true}
                 containerStyle={{margin: 10}}
                 onChangeText={value => this.setState({value})}/>
-              <Button raised primary text={buttonLabel} style={buttonStyle} onPress={this._confirmNewOption}/>
-            </KeyboardAvoidingView>
+              <Button raised primary disabled={this.state.value === ''} text={buttonLabel} style={buttonStyle}
+                      onPress={this._confirmNewOption}/>
+            </View>
           </View>
         </View>
       </Modal>
@@ -84,7 +87,8 @@ ModalInput.propTypes = {
   modalVisible: PropTypes.bool.isRequired,
   inputLabel: PropTypes.string.isRequired,
   buttonLabel: PropTypes.string.isRequired,
-  onConfirm: PropTypes.func.isRequired
+  onConfirm: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 }
 
 export default ModalInput

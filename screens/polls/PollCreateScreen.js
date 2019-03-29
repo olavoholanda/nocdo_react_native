@@ -71,7 +71,7 @@ class ShowPollScreen extends React.Component {
           centerElement={'Nova enquete'}
         />
         <ModalInput modalVisible={this.state.modalVisible} buttonLabel='Confirmar' inputLabel='Opção'
-                    onConfirm={this._confirmOption}/>
+                    onConfirm={this._confirmOption} onClose={() => this.setState({modalVisible: false})}/>
         <ScrollView>
           <View style={styles.header}>
             <TextField
