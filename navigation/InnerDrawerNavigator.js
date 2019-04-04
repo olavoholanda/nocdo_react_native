@@ -74,11 +74,11 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Polls: {
-      screen: Polls,
+    Incidents: {
+      screen: Incidents,
       navigationOptions: {
-        drawerLabel: "Enquetes",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="poll"/>)
+        title: "Ocorrências",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="feedback"/>)
       }
     },
     Home: {
@@ -116,18 +116,18 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="event"/>)
       }
     },
+    Polls: {
+      screen: Polls,
+      navigationOptions: {
+        drawerLabel: "Enquetes",
+        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="poll"/>)
+      }
+    },
     Documents: {
       screen: Documents,
       navigationOptions: {
         title: "Documentos",
         drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="insert-drive-file"/>)
-      }
-    },
-    Incidents: {
-      screen: Incidents,
-      navigationOptions: {
-        title: "Ocorrências",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="feedback"/>)
       }
     },
   },

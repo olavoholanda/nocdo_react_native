@@ -12,6 +12,9 @@ import PollCreateScreen from '../screens/polls/PollCreateScreen'
 import ShowPollScreen from '../screens/polls/ShowPollScreen'
 import PollResultScreen from '../screens/polls/PollResultScreen'
 
+//INCIDENTS
+import IncidentCreateScreen from '../screens/incidents/IncidentCreateScreen'
+
 export default createAppContainer(createSwitchNavigator({
     // Main: SignInScreen,
     Main: InnerDrawerNavigator,
@@ -21,4 +24,5 @@ export default createAppContainer(createSwitchNavigator({
     PollShow: ShowPollScreen,
     PollResult: PollResultScreen,
     PollCreate: PollCreateScreen,
+    IncidentCreate: IncidentCreateScreen,
 }))
