@@ -74,18 +74,18 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Incidents: {
-      screen: Incidents,
-      navigationOptions: {
-        title: 'Ocorrências',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="feedback"/>)
-      }
-    },
     Notice: {
       screen: Notices,
       navigationOptions: {
         title: 'Avisos',
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="message"/>)
+      }
+    },
+    Incidents: {
+      screen: Incidents,
+      navigationOptions: {
+        title: 'Ocorrências',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="feedback"/>)
       }
     },
     Home: {
