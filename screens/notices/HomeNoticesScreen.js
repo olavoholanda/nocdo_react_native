@@ -1,6 +1,6 @@
 import React from 'react'
-import { FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { Toolbar, Card, ListItem } from 'react-native-material-ui'
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Card, ListItem, Toolbar } from 'react-native-material-ui'
 import { accentColor, backgroundColor, darkTextColor, lightGreyColor } from '../../constants/Colors'
 import Divider from 'react-native-material-ui/src/Divider'
 
@@ -38,7 +38,7 @@ class HomeNoticesScreen extends React.Component {
     this.state = {notices: require('./dummyData/dummyList.json')}
   }
 
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Toolbar
@@ -74,4 +74,4 @@ class HomeNoticesScreen extends React.Component {
   }
 }
 
-export default HomeNoticesScreen;
+export default HomeNoticesScreen
