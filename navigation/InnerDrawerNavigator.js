@@ -74,18 +74,11 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Notice: {
-      screen: Notices,
+    Documents: {
+      screen: Documents,
       navigationOptions: {
-        title: 'Avisos',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="message"/>)
-      }
-    },
-    Incidents: {
-      screen: Incidents,
-      navigationOptions: {
-        title: 'Ocorrências',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="feedback"/>)
+        title: 'Documentos',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="insert-drive-file"/>)
       }
     },
     Home: {
@@ -93,6 +86,13 @@ const AppDrawerNavigator = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Início',
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="home"/>)
+      }
+    },
+    Notice: {
+      screen: Notices,
+      navigationOptions: {
+        title: 'Avisos',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="message"/>)
       }
     },
     Lobby: {
@@ -123,14 +123,13 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="poll"/>)
       }
     },
-    Documents: {
-      screen: Documents,
+    Incidents: {
+      screen: Incidents,
       navigationOptions: {
-        title: 'Documentos',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="insert-drive-file"/>)
+        title: 'Ocorrências',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="feedback"/>)
       }
     },
-
   },
   DrawerConfig
 )
