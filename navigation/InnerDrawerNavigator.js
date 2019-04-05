@@ -77,59 +77,60 @@ const AppDrawerNavigator = createDrawerNavigator(
     Incidents: {
       screen: Incidents,
       navigationOptions: {
-        title: "Ocorrências",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="feedback"/>)
-      }
-    },
-    Home: {
-      screen: Feed,
-      navigationOptions: {
-        drawerLabel: "Início",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="home"/>)
+        title: 'Ocorrências',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="feedback"/>)
       }
     },
     Notice: {
       screen: Notices,
       navigationOptions: {
-        title: "Avisos",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="message"/>)
+        title: 'Avisos',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="message"/>)
+      }
+    },
+    Home: {
+      screen: Feed,
+      navigationOptions: {
+        drawerLabel: 'Início',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="home"/>)
       }
     },
     Lobby: {
       screen: Lobby,
       navigationOptions: {
-        title: "Portaria",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="people"/>)
+        title: 'Portaria',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="people"/>)
       }
     },
     Employees: {
       screen: Employees,
       navigationOptions: {
-        title: "Colaboradores",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="perm-contact-calendar"/>)
+        title: 'Colaboradores',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="perm-contact-calendar"/>)
       }
     },
     Reservations: {
       screen: Reservations,
       navigationOptions: {
-        title: "Reservas",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="event"/>)
+        title: 'Reservas',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="event"/>)
       }
     },
     Polls: {
       screen: Polls,
       navigationOptions: {
-        drawerLabel: "Enquetes",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="poll"/>)
+        drawerLabel: 'Enquetes',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="poll"/>)
       }
     },
     Documents: {
       screen: Documents,
       navigationOptions: {
-        title: "Documentos",
-        drawerIcon: ({ tintColor }) => (<Icon color={tintColor} name="insert-drive-file"/>)
+        title: 'Documentos',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="insert-drive-file"/>)
       }
     },
+
   },
   DrawerConfig
 )

@@ -1,8 +1,9 @@
 import React from 'react'
-import { StyleSheet, ScrollView, View } from 'react-native'
-import { Toolbar, Button } from 'react-native-material-ui'
+import { ScrollView, StyleSheet, View } from 'react-native'
+import { Button, Checkbox, Toolbar } from 'react-native-material-ui'
 import { backgroundColor, mainColor } from '../../constants/Colors'
 import { TextField } from 'react-native-material-textfield'
+import ModalDialog from '../../components/ModalDialog'
 
 const styles = StyleSheet.create({
   container: {
@@ -20,16 +21,26 @@ class IncidentCreateScreen extends React.Component {
     super(props)
 
     this.state = {
-      incident: ''
+      incident: 'Digite aqui o que aconteceu...',
+      privacy: false,
+      modalVisible: false,
     }
   }
 
   _submitIncident = async () => {
     console.log('sending incident', this.state.incident)
+    this.setState({modalVisible: true})
   }
 
-  render() {
-    let {incident} = this.state
+  _sendIncident = async (action) => {
+    this.setState({modalVisible: false})
+    if (action) {
+      console.log('confirmed action, now we will send the data')
+    }
+  }
+
+  render () {
+    let {incident, privacy, modalVisible} = this.state
     return (
       <View style={styles.container}>
         <Toolbar
@@ -40,16 +51,19 @@ class IncidentCreateScreen extends React.Component {
         <ScrollView style={styles.scroll}>
           <TextField
             tintColor={mainColor}
-            label='Digite o que aconteceu!'
+            label='Ocorrência'
             value={incident}
             multiline
             onChangeText={incident => this.setState({incident})}
           />
+          <Checkbox label="I Agree" value="privacy" checked={privacy} onCheck={privacy => this.setState({privacy})}/>
           <Button raised primary text='Criar' onPress={this._submitIncident}/>
         </ScrollView>
+        <ModalDialog modalVisible={modalVisible} title='Confirmar' subtitle='Enviar nova ocorrência?'
+                     onClose={this._sendIncident}/>
       </View>
     )
   }
 }
 
-export default IncidentCreateScreen;
+export default IncidentCreateScreen
