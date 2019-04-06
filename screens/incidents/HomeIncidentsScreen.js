@@ -52,7 +52,7 @@ class HomeIncidentsScreen extends React.Component {
           rightElement="add"
           onRightElementPress={() => this.props.navigation.navigate('IncidentCreate')}
         />
-        <ScrollView>
+        <ScrollView style={{flex: 1}}>
           <FlatList
             data={this.state.incidents}
             renderItem={({item}) => <ListItem
