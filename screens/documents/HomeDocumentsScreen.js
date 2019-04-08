@@ -2,7 +2,9 @@ import React from 'react'
 import { FlatList, ScrollView, StyleSheet, Linking, View } from 'react-native'
 import { Toolbar, ListItem, Icon } from 'react-native-material-ui'
 import { accentColor, backgroundColor, darkTextColor, lightGreyColor } from '../../constants/Colors'
-import DocumentIcon from './DocumentIcon'
+import DocumentIcon from '../../components/document/DocumentIcon'
+import DocumentMenu from '../../components/document/DocumentMenu'
+import Button from 'react-native-material-ui/src/Button'
 
 const styles = StyleSheet.create({
   container: {
@@ -30,15 +32,31 @@ const listItem = StyleSheet.create({
   }
 })
 
-
-
 class HomeDocumentsScreen extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {documents: require('./dummyData/dummyList.json')}
+    this.state = {
+      documents: require('./dummyData/dummyList.json'),
+      modalVisible: false,
+      selectedDocument: {}
+    }
   }
 
-  render() {
+  _openDocumentMenu = async (document) => {
+    this.setState({
+      modalVisible: true,
+      selectedDocument: document
+    })
+  }
+
+  _onCloseModal = async () => {
+    this.setState({
+      modalVisible: false,
+      selectedDocument: {}
+    })
+  }
+
+  render () {
     return (
       <View style={styles.container}>
         <Toolbar
@@ -60,14 +78,16 @@ class HomeDocumentsScreen extends React.Component {
                 secondaryText: new Date(item.date).toLocaleDateString(),
               }}
               onPress={() => Linking.openURL(item.url)}
-              rightElement={<Icon name='more-vert' color={darkTextColor}/>}
+              rightElement={<Button icon='more-vert' text='' accent onPress={() => this._openDocumentMenu(item)}/>}
             />}
             keyExtractor={item => item.id}
           />
         </ScrollView>
+        <DocumentMenu modalVisible={this.state.modalVisible} document={this.state.selectedDocument}
+                      onClose={this._onCloseModal}/>
       </View>
     )
   }
 }
 
-export default HomeDocumentsScreen;
+export default HomeDocumentsScreen
