@@ -1,10 +1,11 @@
 import React from 'react'
-import { FlatList, ScrollView, StyleSheet, Linking, View } from 'react-native'
-import { Toolbar, ListItem, Icon } from 'react-native-material-ui'
-import { accentColor, backgroundColor, darkTextColor, lightGreyColor } from '../../constants/Colors'
+import { FlatList, Linking, ScrollView, StyleSheet, View } from 'react-native'
+import { ListItem, Toolbar } from 'react-native-material-ui'
+import { accentColor, backgroundColor, lightGreyColor } from '../../constants/Colors'
 import DocumentIcon from '../../components/document/DocumentIcon'
 import DocumentMenu from '../../components/document/DocumentMenu'
 import Button from 'react-native-material-ui/src/Button'
+import { DocumentPicker } from 'expo'
 
 const styles = StyleSheet.create({
   container: {
@@ -56,6 +57,13 @@ class HomeDocumentsScreen extends React.Component {
     })
   }
 
+  _pickDocument = async () => {
+    const newDocument = await DocumentPicker.getDocumentAsync({type: '*/*', copyToCacheDirectory: true})
+    if (newDocument.type === 'success') {
+      console.log('upload document ', newDocument.name)
+    }
+  }
+
   render () {
     return (
       <View style={styles.container}>
@@ -64,7 +72,7 @@ class HomeDocumentsScreen extends React.Component {
           onLeftElementPress={() => this.props.navigation.toggleDrawer()}
           centerElement={'Documentos'}
           rightElement="add"
-          onRightElementPress={() => this.props.navigation.navigate('DocumentUpload')}
+          onRightElementPress={this._pickDocument}
         />
         <ScrollView style={{flex: 1, padding: 15}}>
           <FlatList
