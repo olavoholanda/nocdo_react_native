@@ -4,6 +4,7 @@ import { Toolbar } from 'react-native-material-ui'
 import { accentColor, backgroundColor, mainColor } from '../../constants/Colors'
 import EmployeeCard from '../../components/employee/EmployeeCard'
 import { SceneMap, TabBar, TabView } from 'react-native-tab-view'
+import EmployeeMenu from '../../components/employee/EmployeeMenu'
 
 const InternalRoute = () => (
   <ListOfInternals/>
@@ -29,8 +30,24 @@ class ListOfExternals extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      workers: require('./dummyData/dummyExternalList')
+      workers: require('./dummyData/dummyExternalList'),
+      modalVisible: false,
+      selectedEmployee: {}
     }
+  }
+
+  _openEmployeeMenu = async (empl) => {
+    this.setState({
+      modalVisible: true,
+      selectedEmployee: empl
+    })
+  }
+
+  _onCloseModal = async () => {
+    this.setState({
+      modalVisible: false,
+      selectedEmployee: {}
+    })
   }
 
   render () {
@@ -38,10 +55,12 @@ class ListOfExternals extends React.Component {
       <ScrollView style={{flex: 1, padding: 15}}>
         <FlatList
           data={this.state.workers}
-          renderItem={({item}) => <EmployeeCard employee={item}/>}
+          renderItem={({item}) => <EmployeeCard employee={item} onPress={() => this._openEmployeeMenu(item)} />}
           keyExtractor={item => item.id}
         />
         <View style={{height: 20}}/>
+        <EmployeeMenu modalVisible={this.state.modalVisible} employee={this.state.selectedEmployee}
+                      onClose={this._onCloseModal}/>
       </ScrollView>
     )
   }
@@ -51,8 +70,24 @@ class ListOfInternals extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      workers: require('./dummyData/dummyCondoList')
+      workers: require('./dummyData/dummyCondoList'),
+      modalVisible: false,
+      selectedEmployee: {}
     }
+  }
+
+  _openEmployeeMenu = async (empl) => {
+    this.setState({
+      modalVisible: true,
+      selectedEmployee: empl
+    })
+  }
+
+  _onCloseModal = async () => {
+    this.setState({
+      modalVisible: false,
+      selectedEmployee: {}
+    })
   }
 
   render () {
@@ -60,10 +95,12 @@ class ListOfInternals extends React.Component {
       <ScrollView style={{flex: 1, padding: 15}}>
         <FlatList
           data={this.state.workers}
-          renderItem={({item}) => <EmployeeCard employee={item}/>}
+          renderItem={({item}) => <EmployeeCard employee={item} onPress={() => this._openEmployeeMenu(item)} />}
           keyExtractor={item => item.id}
         />
         <View style={{height: 20}}/>
+        <EmployeeMenu modalVisible={this.state.modalVisible} employee={this.state.selectedEmployee}
+                      onClose={this._onCloseModal}/>
       </ScrollView>
     )
   }

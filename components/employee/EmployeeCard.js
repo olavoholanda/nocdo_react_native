@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { Rating } from 'react-native-elements'
 import PropTypes from 'prop-types'
 import { Card } from 'react-native-material-ui'
@@ -61,7 +61,13 @@ class EmployeeCard extends React.Component {
     }
     return (
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{backgroundColor: accentColor, color: 'white', fontWeight: 'bold', borderRadius: 2, padding: 5}}>EXTERNO</Text>
+        <Text style={{
+          backgroundColor: accentColor,
+          color: 'white',
+          fontWeight: 'bold',
+          borderRadius: 2,
+          padding: 5
+        }}>EXTERNO</Text>
       </View>
     )
   }
@@ -70,24 +76,24 @@ class EmployeeCard extends React.Component {
     const {employee} = this.state
     return (
       <View style={{flex: 1, width: '100%'}}>
-        <Card>
-          <View style={{flex: 1, flexDirection: 'row', height: 150}}>
-            <View style={{flex: 1, margin: 10, justifyContent: 'space-between'}}>
-              <View>
-                <Text style={styles.name}>{employee.name}</Text>
-                <Text style={styles.role}>{employee.category}</Text>
+        <Card onPress={this.props.onPress}>
+            <View style={{flex: 1, flexDirection: 'row', height: 150}}>
+              <View style={{flex: 1, margin: 10, justifyContent: 'space-between'}}>
+                <View>
+                  <Text style={styles.name}>{employee.name}</Text>
+                  <Text style={styles.role}>{employee.category}</Text>
+                </View>
+                {this.renderAgeAndAdmission()}
+                <Rating
+                  imageSize={18}
+                  readonly
+                  startingValue={employee.rating}
+                />
               </View>
-              {this.renderAgeAndAdmission()}
-              <Rating
-                imageSize={18}
-                readonly
-                startingValue={employee.rating}
-              />
+              <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                <Image source={{uri: employee.profileUrl}} style={{width: 125, height: 125, borderRadius: 5}}/>
+              </View>
             </View>
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-              <Image source={{uri: employee.profileUrl}} style={{width: 125, height: 125, borderRadius: 5}}/>
-            </View>
-          </View>
         </Card>
       </View>
     )
@@ -96,6 +102,7 @@ class EmployeeCard extends React.Component {
 
 EmployeeCard.propTypes = {
   employee: PropTypes.object.isRequired,
+  onPress: PropTypes.func,
 }
 
 export default EmployeeCard
