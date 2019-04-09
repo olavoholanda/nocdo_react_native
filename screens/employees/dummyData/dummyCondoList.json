@@ -1,0 +1,29 @@
+[
+  {
+    "id": "710fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Paulo Ferreira",
+    "dateOfBirth": "1976-03-22",
+    "dateOfAdmission": "2003-01-01",
+    "profileUrl": "https://randomuser.me/api/portraits/men/49.jpg",
+    "category": "Porteiro",
+    "rating": 4.7
+  },
+  {
+    "id": "610fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Miguel da Costa",
+    "dateOfBirth": "1962-05-15",
+    "dateOfAdmission": "1994-01-01",
+    "profileUrl": "https://randomuser.me/api/portraits/men/21.jpg",
+    "category": "Porteiro",
+    "rating": 4.1
+  },
+  {
+    "id": "510fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Carlos Eduardo",
+    "dateOfBirth": "1990-12-01",
+    "dateOfAdmission": "2010-01-01",
+    "profileUrl": "https://randomuser.me/api/portraits/men/65.jpg",
+    "category": "Porteiro",
+    "rating": 3.8
+  }
+]

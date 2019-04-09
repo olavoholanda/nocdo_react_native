@@ -1,0 +1,30 @@
+[
+  {
+    "id": "710fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Fernando Silva",
+    "profileUrl": "https://randomuser.me/api/portraits/men/30.jpg",
+    "category": "Pintor",
+    "rating": 4.7
+  },
+  {
+    "id": "610fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Christiano Moura",
+    "profileUrl": "https://randomuser.me/api/portraits/men/8.jpg",
+    "category": "Eletricista",
+    "rating": 4.8
+  },
+  {
+    "id": "510fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Maria Clara",
+    "profileUrl": "https://randomuser.me/api/portraits/women/42.jpg",
+    "category": "Babá",
+    "rating": 5
+  },
+  {
+    "id": "310fbd29-ec23-4c51-a311-cc87e453df94",
+    "name": "Dona Cleide",
+    "profileUrl": "https://randomuser.me/api/portraits/women/52.jpg",
+    "category": "Diarista",
+    "rating": 3.7
+  }
+]
