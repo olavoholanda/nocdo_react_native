@@ -74,11 +74,11 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Documents: {
-      screen: Documents,
+    Employees: {
+      screen: Employees,
       navigationOptions: {
-        title: 'Documentos',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="insert-drive-file"/>)
+        title: 'Colaboradores',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="perm-contact-calendar"/>)
       }
     },
     Home: {
@@ -102,13 +102,6 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="people"/>)
       }
     },
-    Employees: {
-      screen: Employees,
-      navigationOptions: {
-        title: 'Colaboradores',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="perm-contact-calendar"/>)
-      }
-    },
     Reservations: {
       screen: Reservations,
       navigationOptions: {
@@ -121,6 +114,13 @@ const AppDrawerNavigator = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Enquetes',
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="poll"/>)
+      }
+    },
+    Documents: {
+      screen: Documents,
+      navigationOptions: {
+        title: 'Documentos',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="insert-drive-file"/>)
       }
     },
     Incidents: {
