@@ -74,6 +74,13 @@ const DrawerConfig = {
 //menu drawer
 const AppDrawerNavigator = createDrawerNavigator(
   {
+    Reservations: {
+      screen: Reservations,
+      navigationOptions: {
+        title: 'Reservas',
+        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="event"/>)
+      }
+    },
     Employees: {
       screen: Employees,
       navigationOptions: {
@@ -100,13 +107,6 @@ const AppDrawerNavigator = createDrawerNavigator(
       navigationOptions: {
         title: 'Portaria',
         drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="people"/>)
-      }
-    },
-    Reservations: {
-      screen: Reservations,
-      navigationOptions: {
-        title: 'Reservas',
-        drawerIcon: ({tintColor}) => (<Icon color={tintColor} name="event"/>)
       }
     },
     Polls: {

@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import React, { Component } from 'react'
+import { Platform, StatusBar, StyleSheet, View } from 'react-native'
+import { AppLoading, Asset, Font, Icon } from 'expo'
+import AppNavigator from './navigation/AppNavigator'
 
-import {ThemeContext, getTheme, Toolbar} from 'react-native-material-ui';
-import { mainColor, accentColor, textColor, darkTextColor, greyTextColor } from './constants/Colors'
+import { getTheme, ThemeContext } from 'react-native-material-ui'
+import { accentColor, darkTextColor, mainColor, textColor } from './constants/Colors'
+import { LocaleConfig } from 'react-native-calendars'
 
 const statusBarHeight = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})
 
 // you can set your style right here, it'll be propagated to application
 const uiTheme = {
@@ -23,24 +30,23 @@ const uiTheme = {
       height: 80,
     },
   },
-};
-
-export default class Main extends Component {
-  render() {
-    return (
-        <ThemeContext.Provider value={getTheme(uiTheme)}>
-          <App />
-        </ThemeContext.Provider>
-    );
-  }
 }
+
+LocaleConfig.locales['br'] = {
+  monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+  dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
+}
+
+LocaleConfig.defaultLocale = 'br'
 
 class App extends React.Component {
   state = {
     isLoadingComplete: false,
-  };
+  }
 
-  render() {
+  render () {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
@@ -48,13 +54,13 @@ class App extends React.Component {
           onError={this._handleLoadingError}
           onFinish={this._handleFinishLoading}
         />
-      );
+      )
     } else {
       return (
         <View style={styles.container}>
-          <AppNavigator />
+          <AppNavigator/>
         </View>
-      );
+      )
     }
   }
 
@@ -71,22 +77,28 @@ class App extends React.Component {
         // to remove this if you are not using it in your app
         'Roboto': require('./assets/fonts/Roboto-Regular.ttf'),
       }),
-    ]);
-  };
+    ])
+  }
 
   _handleLoadingError = error => {
     // In this case, you might want to report the error to your error
     // reporting service, for example Sentry
-    console.warn(error);
-  };
+    console.warn(error)
+  }
 
   _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
-  };
+    this.setState({isLoadingComplete: true})
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+class Main extends Component {
+  render () {
+    return (
+      <ThemeContext.Provider value={getTheme(uiTheme)}>
+        <App/>
+      </ThemeContext.Provider>
+    )
+  }
+}
+
+export default Main
