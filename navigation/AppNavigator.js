@@ -23,7 +23,7 @@ import ReservationShowSpaceScreen from '../screens/reservations/ReservationShowS
 
 export default createAppContainer(createSwitchNavigator({
     // Main: SignInScreen,
-    Main: ReservationShowSpaceScreen,
+    Main: InnerDrawerNavigator,
     ForgotPassword: ForgotPasswordScreen,
     RegisterScreen: RegisterScreen,
     InnerHome: InnerDrawerNavigator,

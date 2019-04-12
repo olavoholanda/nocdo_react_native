@@ -1,9 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, FlatList, Image, Linking } from 'react-native'
-import { Toolbar, Avatar, ListItem, Card } from 'react-native-material-ui'
-import { accentColor, backgroundColor, lightColor, lightGreyColor } from '../../constants/Colors'
-import DocumentIcon from '../documents/HomeDocumentsScreen'
-import Subheader from 'react-native-material-ui/src/Subheader'
+import { FlatList, Image, ScrollView, StyleSheet, View } from 'react-native'
+import { Card, ListItem, Toolbar } from 'react-native-material-ui'
+import { accentColor, backgroundColor, lightGreyColor, mainColor } from '../../constants/Colors'
+import { closedDays } from '../../components/utils/utils'
 
 const styles = StyleSheet.create({
   container: {
@@ -20,13 +19,17 @@ const styles = StyleSheet.create({
 
 const listItem = StyleSheet.create({
   primaryText: {
-    color: accentColor,
+    color: mainColor,
     fontWeight: 'bold',
     fontSize: 16,
   },
   secondaryText: {
-    color: lightGreyColor,
+    color: accentColor,
     fontSize: 14,
+  },
+  tertiaryText: {
+    color: lightGreyColor,
+    fontSize: 12,
     fontStyle: 'italic'
   }
 })
@@ -34,13 +37,14 @@ const listItem = StyleSheet.create({
 class HomeReservationScreen extends React.Component {
   constructor (props) {
     super(props)
+
     this.state = {
       spaces: require('./dummyData/dummyList')
     }
   }
 
-  _onPress = async () => {
-    this.props.navigation.navigate('ReservationShowSpaceScreen')
+  _onPress = async (spaceId) => {
+    this.props.navigation.navigate('ReservationShowSpace', {spaceId: spaceId})
   }
 
   render () {
@@ -69,9 +73,11 @@ class HomeReservationScreen extends React.Component {
               style={listItem}
               leftElement={<Image source={{uri: item.imageUrl}} style={styles.spaceImg}/>}
               centerElement={{
-                primaryText: item.name
+                primaryText: item.name,
+                secondaryText: closedDays(item.unavailableDays),
+                tertiaryText: item.more
               }}
-              onPress={this._onPress}
+              onPress={() => this._onPress(item.id)}
             /></Card>}
             keyExtractor={item => item.id}
           />

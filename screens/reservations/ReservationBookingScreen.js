@@ -1,10 +1,10 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { accentColor, backgroundColor, darkTextColor, mainColor } from '../../constants/Colors'
-import { Button, Card, Icon, Toolbar } from 'react-native-material-ui'
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { accentColor, backgroundColor, darkTextColor, lightGreyColor, mainColor } from '../../constants/Colors'
+import { Button, Card, Icon, ListItem, Toolbar } from 'react-native-material-ui'
 import { Calendar } from 'react-native-calendars'
 import moment from 'moment'
-import { weekdaysInMonth } from '../../components/utils/weekdays'
+import {weekdaysInMonth} from '../../components/utils/weekdays'
 
 const UNAVAILABLE_DAY = {disabled: true, disableTouchEvent: true}
 
@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flex: 1,
-    marginTop: 15
   },
   spaceImg: {
     height: 100,
@@ -26,12 +25,26 @@ const styles = StyleSheet.create({
   }
 })
 
+const listItem = StyleSheet.create({
+  primaryText: {
+    color: mainColor,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  secondaryText: {
+    color: accentColor,
+    fontSize: 14,
+  },
+  tertiaryText: {
+    color: lightGreyColor,
+    fontSize: 12,
+    fontStyle: 'italic'
+  }
+})
+
 function getDatesFromMonthDay (weekdays, startDate) {
   const now = moment()
   let datesArray = weekdaysInMonth(moment(startDate), weekdays)
-
-  if(!datesArray) return {}
-
   datesArray = datesArray.filter(d => now.isBefore(d))
 
   return datesArray.reduce((acc, current) => {
@@ -40,29 +53,28 @@ function getDatesFromMonthDay (weekdays, startDate) {
   }, {})
 }
 
-class ReservationShowSpaceScreen extends React.Component {
+class ReservationBookingScreen extends React.Component {
 
   constructor (props) {
     super(props)
-    const spaces = require('./dummyData/dummyList.json')
 
-    const {navigation} = this.props
-    const spaceId = navigation.getParam('spaceId', 'NO-ID')
-
-    const selectedSpace = spaces.find(s => s.id === spaceId)
-    this.state = {poll: selectedSpace, selectedOption: '-1'}
-
+    const now = moment()
     this.state = {
-      space: selectedSpace,
-      markedDates: {},
+      space: {
+        id: '710fbd29-ec23-4c51-a311-cc87e453df94',
+        name: 'Salão de Festas',
+        imageUrl: 'https://br.habcdn.com/photos/project/medium/predio-vila-olimpia-sp-salao-de-festas_567663.jpg',
+        unavailableDays: ['monday, tuesday'],
+        more: 'Espaço disponível das 10:00 às 23:00. Segunda e Terça sempre fechado.'
+      },
+      markedDates: this._loadMarkedDates(now.toISOString()),
       selectedDate: ''
     }
-
-    this.state.markedDates = this._loadMarkedDates(moment())
   }
 
   _loadMarkedDates = (startDate) => {
-    let markedDates = getDatesFromMonthDay([...this.state.space.unavailableDays], startDate)
+    const unavailableWeekDays = ['monday', 'tuesday']
+    let markedDates = getDatesFromMonthDay(unavailableWeekDays, startDate)
 
     const yourReservation = moment().day('friday').format('YYYY-MM-DD')
     markedDates[yourReservation] = {selected: true, selectedColor: mainColor}
@@ -85,22 +97,33 @@ class ReservationShowSpaceScreen extends React.Component {
   }
 
   render () {
+    const {space} = this.state
+
     return (
       <View style={styles.container}>
         <Toolbar
           leftElement="arrow-back"
           onLeftElementPress={() => this.props.navigation.navigate('InnerHome')}
-          centerElement={this.state.space.name}
+          centerElement={'Reservas'}
         />
         <ScrollView style={styles.scroll}>
+          <Card>
+            <Image source={{uri: space.imageUrl}} resizeMode='cover' style={styles.spaceImg}/>
+            <ListItem
+              style={listItem}
+              numberOfLines={'dynamic'}
+              centerElement={{
+                primaryText: space.name,
+                secondaryText: 'Fechado: Segunda, Terça',
+                tertiaryText: space.more
+              }}
+            />
+          </Card>
           <Card>
             <Calendar
               minDate={new Date()}
               onDayPress={(day) => this.setState({selectedDate: day.dateString})}
-              markedDates={{
-                ...this.state.markedDates,
-                [this.state.selectedDate]: {selected: true, disableTouchEvent: true, selectedColor: 'blue'}
-              }}
+              markedDates={{ ...this.state.markedDates, [this.state.selectedDate]: { selected: true, disableTouchEvent: true, selectedColor: 'blue'} }}
               onMonthChange={(month) => this.setState({markedDates: this._loadMarkedDates(month.dateString)})}
             />
             <View>
@@ -130,4 +153,4 @@ class ReservationShowSpaceScreen extends React.Component {
   }
 }
 
-export default ReservationShowSpaceScreen
+export default ReservationBookingScreen
