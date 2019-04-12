@@ -18,9 +18,12 @@ import IncidentCreateScreen from '../screens/incidents/IncidentCreateScreen'
 //NOTICES
 import NoticeCreateScreen from '../screens/notices/NoticeCreateScreen'
 
+//RESERVATION
+import ReservationShowSpaceScreen from '../screens/reservations/ReservationShowSpaceScreen'
+
 export default createAppContainer(createSwitchNavigator({
     // Main: SignInScreen,
-    Main: InnerDrawerNavigator,
+    Main: ReservationShowSpaceScreen,
     ForgotPassword: ForgotPasswordScreen,
     RegisterScreen: RegisterScreen,
     InnerHome: InnerDrawerNavigator,
@@ -29,4 +32,5 @@ export default createAppContainer(createSwitchNavigator({
     PollCreate: PollCreateScreen,
     IncidentCreate: IncidentCreateScreen,
     NoticeCreate: NoticeCreateScreen,
+    ReservationShowSpace: ReservationShowSpaceScreen,
 }))

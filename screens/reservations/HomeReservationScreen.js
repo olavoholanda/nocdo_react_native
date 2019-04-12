@@ -51,7 +51,7 @@ class HomeReservationScreen extends React.Component {
           onLeftElementPress={() => this.props.navigation.toggleDrawer()}
           centerElement={'Reservas'}
           rightElement="add"
-          onRightElementPress={() => this.props.navigation.navigate('ReservationCreateSpaceScreen')}
+          onRightElementPress={() => this.props.navigation.navigate('ReservationCreateSpace')}
         />
         <ScrollView style={{flex: 1}}>
           <Card>
